@@ -1,0 +1,319 @@
+<html>
+ <head>
+  <title>
+   One IT Library
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .title {
+            font-size: 20px;
+        }
+        .header .logout {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #222;
+            color: white;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 20px;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        .content .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .content .top-bar button {
+            background-color: #0275d8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .content .table-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .content .table-container table th, .content .table-container table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .content .table-container table th {
+            background-color: #f2f2f2;
+        }
+        .content .table-container table td img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .content .table-container table td .btn {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 3px;
+        }
+        .content .table-container table td .btn.details {
+            background-color: #5bc0de;
+        }
+        .content .table-container table td .btn.edit {
+            background-color: #5cb85c;
+        }
+        .content .table-container table td .btn.delete {
+            background-color: #d9534f;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="title">
+    One IT Library
+   </div>
+   <div class="date">
+    Today : 30-06-2020
+   </div>
+   <button class="logout">
+    Logout
+   </button>
+  </div>
+  <div class="sidebar">
+   <img alt="User profile picture" height="100" src="https://storage.googleapis.com/a1aa/image/Hx30VfeZj1qmSEwIGomAYIjl5JHWNg8oBDgqTt1yQwvAsRvTA.jpg" width="100"/>
+   <a href="#">
+    <i class="fas fa-tachometer-alt">
+    </i>
+    Dashboard
+   </a>
+   <a href="#">
+    <i class="fas fa-users">
+    </i>
+    Data Anggota
+   </a>
+   <a href="#">
+    <i class="fas fa-book">
+    </i>
+    Data Buku
+   </a>
+   <a href="#">
+    <i class="fas fa-exchange-alt">
+    </i>
+    Transaksi
+   </a>
+  </div>
+  <div class="content">
+   <div class="top-bar">
+    <button>
+     + Tambah Data
+    </button>
+   </div>
+   <div class="table-container">
+    <h3>
+     Tabel Anggota
+    </h3>
+    <div>
+     <label for="recordsPerPage">
+      records per page
+     </label>
+     <select id="recordsPerPage">
+      <option value="10">
+       10
+      </option>
+      <option value="25">
+       25
+      </option>
+      <option value="50">
+       50
+      </option>
+      <option value="100">
+       100
+      </option>
+     </select>
+     <input placeholder="Search" type="text"/>
+    </div>
+    <table>
+     <thead>
+      <tr>
+       <th>
+        No
+       </th>
+       <th>
+        NIM
+       </th>
+       <th>
+        Nama
+       </th>
+       <th>
+        Jenis Kelamin
+       </th>
+       <th>
+        Program Studi
+       </th>
+       <th>
+        Alamat
+       </th>
+       <th>
+        Foto
+       </th>
+       <th>
+        Aksi
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        12191124
+       </td>
+       <td>
+        Siti Hartati
+       </td>
+       <td>
+        Perempuan
+       </td>
+       <td>
+        Sistem Informasi
+       </td>
+       <td>
+        Tokyo, Japan
+       </td>
+       <td>
+        <img alt="Profile picture of Siti Hartati" height="50" src="https://storage.googleapis.com/a1aa/image/1pPoaWNX4b49EZVwQATs4i7BEkpL7JoGK6Q7upCAKPre1o3JA.jpg" width="50"/>
+       </td>
+       <td>
+        <button class="btn details">
+         Details
+        </button>
+        <button class="btn edit">
+         Edit
+        </button>
+        <button class="btn delete">
+         Hapus
+        </button>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        12192509
+       </td>
+       <td>
+        Lee Eunsang
+       </td>
+       <td>
+        Laki-laki
+       </td>
+       <td>
+        Teknik Informatika
+       </td>
+       <td>
+        South Jakarta, Indonesia
+       </td>
+       <td>
+        <img alt="Profile picture of Lee Eunsang" height="50" src="https://storage.googleapis.com/a1aa/image/cygn9gpKfQTfxEjr9LBPc8onEzIMeeeJFSs8KeAfEXmmfrRvTA.jpg" width="50"/>
+       </td>
+       <td>
+        <button class="btn details">
+         Details
+        </button>
+        <button class="btn edit">
+         Edit
+        </button>
+        <button class="btn delete">
+         Hapus
+        </button>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        12190102
+       </td>
+       <td>
+        Lee Hangyul
+       </td>
+       <td>
+        Laki-laki
+       </td>
+       <td>
+        Sistem Informasi
+       </td>
+       <td>
+        Bandung Lautan Api, Indonesia
+       </td>
+       <td>
+        <img alt="Profile picture of Lee Hangyul" height="50" src="https://storage.googleapis.com/a1aa/image/f51UxfS7JvhLlEyJ0RLJ8fyDHwmLcG4f9jVfoot6e9ISf1o3JA.jpg" width="50"/>
+       </td>
+       <td>
+        <button class="btn details">
+         Details
+        </button>
+        <button class="btn edit">
+         Edit
+        </button>
+        <button class="btn delete">
+         Hapus
+        </button>
+       </td>
+      </tr>
+      <tr>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+ </body>
+</html>
