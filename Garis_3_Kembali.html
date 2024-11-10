@@ -1,0 +1,115 @@
+<html>
+ <head>
+  <title>
+   Perpustakaan
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #1E5A8A;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #d3d3d3;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 20px;
+        }
+        .nav a.active {
+            border-bottom: 3px solid black;
+        }
+        .content {
+            background-color: #1E5A8A;
+            padding: 20px;
+            color: white;
+        }
+        .content img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        .content h2 {
+            margin: 20px 0 10px;
+            font-size: 24px;
+        }
+        .content p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #d3d3d3;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer a {
+            color: black;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .footer a.active {
+            color: #1E5A8A;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   Perpustakaan
+  </div>
+  <div class="nav">
+   <a class="active" href="#">
+    Pinjaman
+   </a>
+   <a href="#">
+    Kembali
+   </a>
+  </div>
+  <div class="content">
+   <img alt="Poster of the movie Cinta featuring a group of people with a heart-shaped tree in the background" height="300" src="https://storage.googleapis.com/a1aa/image/tQESguQqKZrJIFk7WcX97Xv1lqCYcBvzKaba4WWzpWaPD07E.jpg" width="200"/>
+   <h2>
+    CINTA
+   </h2>
+   <p>
+    Diki Dias
+   </p>
+   <p>
+    09 Desember 2050
+   </p>
+  </div>
+  <div class="footer">
+   <a href="#">
+    <i class="fas fa-home">
+    </i>
+   </a>
+   <a href="#">
+    <i class="fas fa-search">
+    </i>
+   </a>
+   <a class="active" href="#">
+    <i class="fas fa-bars">
+    </i>
+   </a>
+   <a href="#">
+    <i class="fas fa-bell">
+    </i>
+   </a>
+  </div>
+ </body>
+</html>
