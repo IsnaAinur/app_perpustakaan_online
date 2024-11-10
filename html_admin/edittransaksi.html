@@ -1,0 +1,189 @@
+<html>
+ <head>
+  <title>
+   PERPUS.KU
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #f05a5a;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .title {
+            font-size: 20px;
+        }
+        .header .date {
+            font-size: 14px;
+        }
+        .header .logout {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 20px;
+        }
+        .sidebar .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .profile img {
+            border-radius: 50%;
+        }
+        .sidebar .menu {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar .menu li {
+            padding: 10px 20px;
+        }
+        .sidebar .menu li a {
+            color: white;
+            text-decoration: none;
+        }
+        .sidebar .menu li a:hover {
+            background-color: #575757;
+            display: block;
+        }
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        .content .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content .form-container h2 {
+            margin-top: 0;
+        }
+        .content .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .content .form-container form label {
+            margin-bottom: 5px;
+        }
+        .content .form-container form input, .content .form-container form select {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .content .form-container form button {
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="title">
+    PERPUS.KU
+   </div>
+   <div class="date">
+    Today : 10-11-2024
+   </div>
+   <button class="logout">
+    Logout
+   </button>
+  </div>
+  <div class="sidebar">
+   <div class="profile">
+    <img alt="Profile Picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
+   </div>
+   <ul class="menu">
+    <li>
+     <a href="indexadmin.html">
+      <i class="fas fa-tachometer-alt">
+      </i>
+      Dashboard
+     </a>
+    </li>
+    <li>
+     <a href="dataanggota.html">
+      <i class="fas fa-users">
+      </i>
+      Data Anggota
+     </a>
+    </li>
+    <li>
+     <a href="databuku.html">
+      <i class="fas fa-book">
+      </i>
+      Data Buku
+     </a>
+    </li>
+    <li>
+     <a href="transaksi.html">
+      <i class="fas fa-exchange-alt">
+      </i>
+      Transaksi
+     </a>
+    </li>
+   </ul>
+  </div>
+  <div class="content">
+   <div class="form-container">
+    <h2>
+     Edit Data Transaksi
+    </h2>
+    <form>
+     <label for="nama-anggota">
+      Nama Anggota
+     </label>
+     <input id="nama-anggota" type="text"/>
+     <label for="judul-buku">
+      Judul Buku
+     </label>
+     <input id="judul-buku" type="text"/>
+     <label for="tanggal-pinjam">
+      Tanggal Pinjam
+     </label>
+     <input id="tanggal-pinjam" type="date"/>
+     <label for="tanggal-kembali">
+      Tanggal Kembali
+     </label>
+     <input id="tanggal-kembali" type="date"/>
+     <label for="status">
+      Status
+     </label>
+     <select id="status">
+      <option value="pinjam">
+       Pinjam
+      </option>
+      <option value="kembali">
+       Kembali
+      </option>
+     </select>
+     <button type="submit">
+      Simpan
+     </button>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>
