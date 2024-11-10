@@ -1,0 +1,303 @@
+<html>
+ <head>
+  <title>
+   Library App
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f0eb;
+        }
+        .container {
+            background-color: #1e73b9;
+            padding: 10px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .search-bar i {
+            font-size: 20px;
+            color: #000;
+        }
+        .menu-icon {
+            background-color: #1e73b9;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .filter-buttons button {
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .book-list {
+            padding: 10px;
+        }
+        .book-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .book-item img {
+            width: 80px;
+            height: 120px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        .book-info {
+            flex: 1;
+        }
+        .book-info h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .book-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .book-tags {
+            display: flex;
+            align-items: center;
+        }
+        .book-tags span {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin-right: 5px;
+            font-size: 12px;
+        }
+        .book-tags .book {
+            background-color: red;
+            color: white;
+        }
+        .book-actions {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        .book-actions i {
+            margin-right: 5px;
+        }
+        .book-actions span {
+            margin-right: 15px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #1e73b9;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer i {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="search-bar">
+    <i class="fas fa-search">
+    </i>
+    <input placeholder="Search..." type="text"/>
+    <button class="menu-icon">
+     <i class="fas fa-bars">
+     </i>
+    </button>
+   </div>
+   <div class="filter-buttons">
+    <button>
+     Baru ditambahkan
+    </button>
+    <button>
+     Romantis
+    </button>
+    <button>
+     Horror
+    </button>
+    <button>
+     Petualangan
+    </button>
+   </div>
+  </div>
+  <div class="book-list">
+   <div class="book-item">
+    <img alt="Cover of the book Cinta" height="120" src="https://storage.googleapis.com/a1aa/image/gb39h1gBzV6YO1TbGe2FBnlgfDIeegFQpiQpZvFo4rHZNf5dC.jpg" width="80"/>
+    <div class="book-info">
+     <h3>
+      CINTA
+     </h3>
+     <div class="book-tags">
+      <span class="book">
+       Buku
+      </span>
+     </div>
+     <div class="book-actions">
+      <i class="fas fa-hand-holding">
+      </i>
+      <span>
+       pinjam
+      </span>
+     </div>
+     <p>
+      Novel ini menceritakan tentang Cinta. Cinta itu harusnya jangan milihnya nanti ketemunya yang janda...
+     </p>
+    </div>
+   </div>
+   <div class="book-item">
+    <img alt="Cover of the book Bukan Sekedar Cinta" height="120" src="https://storage.googleapis.com/a1aa/image/AKmSyD1gXHrYLd0sxuNCNE2MbE5jhk9gHEDqIfRH2KRs5n3JA.jpg" width="80"/>
+    <div class="book-info">
+     <h3>
+      BUKAN SEKEDAR CINTA
+     </h3>
+     <div class="book-tags">
+      <span class="book">
+       Buku
+      </span>
+     </div>
+     <div class="book-actions">
+      <i class="fas fa-hand-holding">
+      </i>
+      <span>
+       pinjam
+      </span>
+     </div>
+     <p>
+      Novel ini menceritakan Bukan Sekedar Cinta. Cinta itu harusnya jangan milihnya nanti ketemunya yang janda...
+     </p>
+    </div>
+   </div>
+   <div class="book-item">
+    <img alt="Cover of the book Jurnal Pendidikan Dasar" height="120" src="https://storage.googleapis.com/a1aa/image/WeVadwtPA7QRCK8MrH4AQiuW5ecVQcc9jTpgb1Gfuibvmf8OB.jpg" width="80"/>
+    <div class="book-info">
+     <h3>
+      JURNAL PENDIDIKAN DASAR
+     </h3>
+     <div class="book-tags">
+      <span class="book">
+       Buku
+      </span>
+     </div>
+     <div class="book-actions">
+      <i class="fas fa-hand-holding">
+      </i>
+      <span>
+       pinjam
+      </span>
+     </div>
+     <p>
+      Novel ini menceritakan Jurnal Pendidikan Dasar. Kejarlah pendidikanmu sampai keujung danau kalimantan...
+     </p>
+    </div>
+   </div>
+   <div class="book-item">
+    <img alt="Cover of the book Petualangan di Hutan" height="120" src="https://storage.googleapis.com/a1aa/image/Rsjg5q0bPf2kY6e5zgM3f637rwCmFcrXYRfwPrNw1mjtqf5dC.jpg" width="80"/>
+    <div class="book-info">
+     <h3>
+      PETUALANGAN DI HUTAN
+     </h3>
+     <div class="book-tags">
+      <span class="book">
+       Buku
+      </span>
+     </div>
+     <div class="book-actions">
+      <i class="fas fa-hand-holding">
+      </i>
+      <span>
+       pinjam
+      </span>
+     </div>
+     <p>
+      Novel ini menceritakan petualangan seru di dalam hutan yang penuh dengan misteri dan tantangan...
+     </p>
+    </div>
+   </div>
+   <div class="book-item">
+    <img alt="Cover of the book Misteri di Kota Tua" height="120" src="https://storage.googleapis.com/a1aa/image/E073vekCiKw2A6EvzU4uixW6g3nw8qDvmcBeMHIz16Wo6PvTA.jpg" width="80"/>
+    <div class="book-info">
+     <h3>
+      MISTERI DI KOTA TUA
+     </h3>
+     <div class="book-tags">
+      <span class="book">
+       Buku
+      </span>
+     </div>
+     <div class="book-actions">
+      <i class="fas fa-hand-holding">
+      </i>
+      <span>
+       pinjam
+      </span>
+     </div>
+     <p>
+      Novel ini menceritakan misteri yang terjadi di kota tua yang penuh dengan sejarah dan rahasia...
+     </p>
+    </div>
+   </div>
+   <div class="book-item">
+    <img alt="Cover of the book Perjalanan ke Bulan" height="120" src="https://storage.googleapis.com/a1aa/image/qiPw4GI9He0SIKueP9TUIhAUjs8oYHSsPolGo9HEN9qp6PvTA.jpg" width="80"/>
+    <div class="book-info">
+     <h3>
+      PERJALANAN KE BULAN
+     </h3>
+     <div class="book-tags">
+      <span class="book">
+       Buku
+      </span>
+     </div>
+     <div class="book-actions">
+      <i class="fas fa-hand-holding">
+      </i>
+      <span>
+       pinjam
+      </span>
+     </div>
+     <p>
+      Novel ini menceritakan perjalanan menakjubkan ke bulan dan petualangan yang dialami di sana...
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+   <i class="fas fa-home">
+   </i>
+   <i class="fas fa-search">
+   </i>
+   <i class="fas fa-bars">
+   </i>
+   <i class="fas fa-bell">
+   </i>
+  </div>
+ </body>
+</html>
