@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Login : One-IT Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .container h1 {
+            color: red;
+            font-size: 24px;
+        }
+        .login-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+        .login-box h2 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group i {
+            padding: 10px;
+            background: #ddd;
+            border-right: 1px solid #ccc;
+        }
+        .input-group input {
+            padding: 10px;
+            width: calc(100% - 40px);
+            border: 1px solid #ccc;
+            border-left: none;
+        }
+        .button-group {
+            text-align: right;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .button-group .login-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .button-group .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>One-IT Library : Login</h1>
+        <div class="login-box">
+            <h2>Masukan Username dan Password</h2>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" value="admin">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" value="">
+            </div>
+            <div class="button-group">
+                <button class="login-btn">login</button>
+                <button class="cancel-btn">Batal</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
