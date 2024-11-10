@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Pengaturan</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1E73A7;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #F8F8F8;
+            padding: 10px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .header i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .container {
+            margin: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .item {
+            padding: 15px;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .item p {
+            font-size: 14px;
+            color: #888888;
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <i class="fas fa-arrow-left"></i>
+        <h1>Pengaturan</h1>
+    </div>
+    <div class="container">
+        <div class="item" onclick="alert('Pengaturan Akun diklik')">
+            <h2>Pengaturan Akun</h2>
+        </div>
+        <div class="item" onclick="alert('Notifikasi diklik')">
+            <h2>Notifikasi</h2>
+        </div>
+        <div class="item" onclick="toggleModeGelap()">
+            <div>
+                <h2>Mode Gelap</h2>
+                <p id="modeGelapStatus">Off</p>
+            </div>
+        </div>
+        <div class="item" onclick="alert('Bahasa diklik')">
+            <div>
+                <h2>Bahasa</h2>
+                <p>Bahasa Indonesia</p>
+            </div>
+        </div>
+        <div class="item" onclick="alert('Keluar diklik')">
+            <h2>Keluar</h2>
+        </div>
+    </div>
+
+    <script>
+        function toggleModeGelap() {
+            var statusElement = document.getElementById('modeGelapStatus');
+            if (statusElement.innerText === 'Off') {
+                statusElement.innerText = 'On';
+            } else {
+                statusElement.innerText = 'Off';
+            }
+        }
+    </script>
+</body>
+</html>
