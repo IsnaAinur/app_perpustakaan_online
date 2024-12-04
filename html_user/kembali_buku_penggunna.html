@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Perpustakaan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .header {
+            background-color: #1e73a9;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 24px;
+        }
+        .nav-tabs {
+            display: flex;
+            background-color: #d3d3d3;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .nav-tabs div {
+            font-size: 18px;
+            color: black;
+        }
+        .nav-tabs .active {
+            border-bottom: 3px solid black;
+        }
+        .content {
+            background-color: #1e73a9;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 18px;
+        }
+        .return-book {
+            background-color: #1e73a9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .return-book input[type="text"], .return-book input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .return-book input[type="text"] {
+            width: 80%;
+        }
+        .return-book input[type="submit"] {
+            background-color: white;
+            color: #1e73a9;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Perpustakaan
+    </div>
+    <div class="nav-tabs">
+        <div>Pinjaman</div>
+        <div class="active">Kembali</div>
+    </div>
+    <div class="content">
+        Belum ada buku yang dikembalikan
+    </div>
+    <div class="return-book">
+        <h2>Kembalikan Buku</h2>
+        <form>
+            <input type="text" placeholder="Masukkan Nama Buku" required>
+            <br>
+            <input type="submit" value="Kembalikan">
+        </form>
+    </div>
+</body>
+</html>
