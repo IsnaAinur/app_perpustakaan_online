@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengaturan</title>
     <style>
         body {
@@ -56,14 +53,16 @@
 </head>
 <body>
     <div class="header">
+        <a href="index.html"> 
         <i class="fas fa-arrow-left"></i>
+        </a>
         <h1>Pengaturan</h1>
     </div>
     <div class="container">
-        <div class="item" onclick="navigateTo('pengaturan_akun.html')">
+        <div class="item" onclick="alert('Pengaturan Akun diklik')">
             <h2>Pengaturan Akun</h2>
         </div>
-        <div class="item" onclick="navigateTo('pengaturan_notifikasi.html')">
+        <div class="item" onclick="alert('Notifikasi diklik')">
             <h2>Notifikasi</h2>
         </div>
         <div class="item" onclick="toggleModeGelap()">
@@ -72,34 +71,25 @@
                 <p id="modeGelapStatus">Off</p>
             </div>
         </div>
-        <div class="item" onclick="logout()">
+        <div class="item" onclick="alert('Bahasa diklik')">
+            <div>
+                <h2>Bahasa</h2>
+                <p>Bahasa Indonesia</p>
+            </div>
+        </div>
+        <div class="item" onclick="alert('Keluar diklik')">
             <h2>Keluar</h2>
         </div>
     </div>
 
     <script>
-        // Fungsi navigasi
-        function navigateTo(page) {
-            window.location.href = page; // Navigasi ke halaman yang diberikan
-        }
-
-        // Fungsi toggle mode gelap
         function toggleModeGelap() {
             var statusElement = document.getElementById('modeGelapStatus');
             if (statusElement.innerText === 'Off') {
                 statusElement.innerText = 'On';
-                document.body.style.backgroundColor = '#121212'; // Contoh perubahan ke mode gelap
             } else {
                 statusElement.innerText = 'Off';
-                document.body.style.backgroundColor = '#1E73A7'; // Kembali ke mode terang
             }
-        }
-
-        // Fungsi logout
-        function logout() {
-            // Hapus data sesi pengguna (misalnya, token atau cookie)
-            alert("Anda telah keluar.");
-            window.location.href = "login.html"; // Arahkan ke halaman login
         }
     </script>
 </body>
