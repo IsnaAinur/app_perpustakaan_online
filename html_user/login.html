@@ -1,0 +1,157 @@
+<html>
+ <head>
+  <title>
+   Perpustakaan Online
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f1eb;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background-color: #2b6a9b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+        .logo h1 {
+            margin: 10px 0 5px;
+            font-size: 24px;
+            color: #000;
+        }
+        .logo p {
+            margin: 0;
+            font-size: 14px;
+            color: #000;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .social-buttons button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .social-buttons .facebook {
+            background-color: #3b5998;
+            color: #fff;
+        }
+        .social-buttons .google {
+            background-color: #db4437;
+            color: #000;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #ccc;
+        }
+        .divider span {
+            margin: 0 10px;
+            color: #fff;
+        }
+        .input-group {
+            margin: 10px 0;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .forgot-password {
+            color: #ccc;
+            font-size: 12px;
+        }
+        .register {
+            color: #fff;
+            font-size: 12px;
+        }
+        .register a {
+            color: #0000ff;
+            text-decoration: none;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="login-box">
+    <div class="logo">
+     <img alt="Logo of an open book with red and orange pages and blue cover" height="100" src="https://storage.googleapis.com/a1aa/image/3RZPf6rmKH1PFCsQVlitLrJ9lORZ1kCYsxdePfHb6oVhf88OB.jpg" width="100"/>
+     <h1>
+      Perpustakaan
+     </h1>
+     <p>
+      perpustakaan online
+     </p>
+    </div>
+    <div class="social-buttons">
+     <button class="facebook">
+      facebook
+     </button>
+     <button class="google">
+      google
+     </button>
+    </div>
+    <div class="divider">
+     <span>
+      atau
+     </span>
+    </div>
+    <div class="input-group">
+     <input placeholder="Email" type="text"/>
+     <input placeholder="Kata Sandi" type="password"/>
+    </div>
+    <button class="login-button">
+     Masuk
+    </button>
+    <div class="forgot-password">
+     Lupa Kata sandi
+    </div>
+    <div class="register">
+     Tidak punya Akun?
+     <a href="#">
+      Daftar
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
