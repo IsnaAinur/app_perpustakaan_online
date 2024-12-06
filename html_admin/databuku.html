@@ -1,369 +1,345 @@
-<html>
- <head>
-  <title>
-   PERPUS.KU
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .header {
-            background-color: #f05a5a;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header .title {
-            font-size: 20px;
-        }
-        .header .date {
-            font-size: 14px;
-        }
-        .header .logout {
-            background-color: #d9534f;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .sidebar {
-            width: 200px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            padding: 20px;
-        }
-        .sidebar .profile {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .sidebar .profile img {
-            border-radius: 50%;
-        }
-        .sidebar .menu {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar .menu li {
-            margin: 10px 0;
-        }
-        .sidebar .menu li a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .sidebar .menu li a i {
-            margin-right: 10px;
-        }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-        }
-        .content .button {
-            background-color: #5bc0de;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        .content .table-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .content .table-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .content .table-container table th, .content .table-container table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .content .table-container table th {
-            background-color: #f2f2f2;
-        }
-        .content .table-container table td img {
-            width: 50px;
-            height: auto;
-        }
-        .content .table-container table .actions button {
-            background-color: #5bc0de;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-        .content .table-container table .actions .delete {
-            background-color: #d9534f;
-        }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <div class="title">
-    PERPUS.KU
-   </div>
-   <div class="date">
-    Today : 10-11-2024
-   </div>
-   <button class="logout">
-    Logout
-   </button>
-  </div>
-  <div class="sidebar">
-   <div class="profile">
-    <img alt="Profile Picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
-   </div>
-   <ul class="menu">
-    <li>
-<<<<<<< HEAD
-     <a href="#">
-=======
-     <a href="indexadmin.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
-      <i class="fas fa-tachometer-alt">
-      </i>
-      Dashboard
-     </a>
-    </li>
-    <li>
-<<<<<<< HEAD
-     <a href="indexadmin.html">
-=======
-     <a href="dataanggota.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
-      <i class="fas fa-users">
-      </i>
-      Data Anggota
-     </a>
-    </li>
-    <li>
-<<<<<<< HEAD
-     <a href="dataanggota.html">
-=======
-     <a href="databuku.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
-      <i class="fas fa-book">
-      </i>
-      Data Buku
-     </a>
-    </li>
-    <li>
-<<<<<<< HEAD
-     <a href="databuku.html">
-=======
-     <a href="transaksi.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
-      <i class="fas fa-exchange-alt">
-      </i>
-      Transaksi
-     </a>
-    </li>
-<<<<<<< HEAD
-</li>
-    <a href="transaksi.html">
-   </ul>
-  </div>
-  <div class="content">
-   <button class="button">
-    Tambah Data
-=======
-   </ul>
-  </div>
-  <div class="content">
-    <a href="tambahbuku.html"> 
-   <button class="button">
-    +Tambah Data
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
-   </button>
-   <div class="table-container">
-    <h2>
-     Data Buku
-    </h2>
-    <div>
-     <label for="records">
-      records per page
-     </label>
-     <select id="records">
-      <option value="10">
-       10
-      </option>
-     </select>
-     <label for="search">
-      Search:
-     </label>
-     <input id="search" type="text"/>
-    </div>
-    <table>
-     <thead>
-      <tr>
-       <th>
-        #
-       </th>
-       <th>
-        Judul
-       </th>
-       <th>
-        Pengarang
-       </th>
-       <th>
-        Penerbit
-       </th>
-       <th>
-        Tahun Terbit
-       </th>
-       <th>
-        Jumlah Buku
-       </th>
-       <th>
-        Gambar
-       </th>
-       <th>
-        Aksi
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        PHP Komplet Vol. 1
-       </td>
-       <td>
-        Jubilee Edward Clark
-       </td>
-       <td>
-        Alex Media Komputindo
-       </td>
-       <td>
-        2018
-       </td>
-       <td>
-        90
-       </td>
-       <td>
-        <img alt="PHP Komplet Vol. 1 Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/hpR0mtbsKzK3MNVeE2IQIvpYugRVeSyKLeJiG1NeyfMDyO6dC.jpg" width="50"/>
-       </td>
-       <td class="actions">
-        <button>
-         Edit
-        </button>
-        <button class="delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        Pemrograman Bootstrap Untuk Pemula
-       </td>
-       <td>
-        Jubilee Enterprise
-       </td>
-       <td>
-        Alex Media Komputindo
-       </td>
-       <td>
-        2016
-       </td>
-       <td>
-        25
-       </td>
-       <td>
-        <img alt="Pemrograman Bootstrap Untuk Pemula Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/gEF5UyeIIsW5BCJf0SmdZM3DLVfkhl3fZGlgcElaCVxexO6dC.jpg" width="50"/>
-       </td>
-       <td class="actions">
-        <button>
-         Edit
-        </button>
-        <button class="delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        Otodidak Pemrograman Python
-       </td>
-       <td>
-        Jubilee Enterprise
-       </td>
-       <td>
-        Alex Media Komputindo
-       </td>
-       <td>
-        2017
-       </td>
-       <td>
-        56
-       </td>
-       <td>
-        <img alt="Otodidak Pemrograman Python Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/BrDmNUyOidrLIBHBpRaIbQv0sFIquVsVuqQRI5jfoJqI7o3JA.jpg" width="50"/>
-       </td>
-       <td class="actions">
-        <button>
-         Edit
-        </button>
-        <button class="delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        Aplikasi Menggunakan CodeIgniter
-       </td>
-       <td>
-        Moch Kautsar Sophian
-       </td>
-       <td>
-        Deepublish
-       </td>
-       <td>
-        2016
-       </td>
-       <td>
-        8
-       </td>
-       <td>
-        <img alt="Aplikasi Menggunakan CodeIgniter Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/nMIXiAfM6BQRG66Jn2n8WjnEtgdDXC0CBlwY2rkAmDTK7o3JA.jpg" width="50"/>
-       </td>
-       <td class="actions">
-        <button>
-         Edit
-        </button>
-        <button class="delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-   </div>
-  </div>
- </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>
+              PERPUS.KU
+             </title>
+             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+             <style>
+              body {
+                       font-family: Arial, sans-serif;
+                       margin: 0;
+                       padding: 0;
+                       background-color: #f4f4f4;
+                   }
+                   .header {
+                       background-color: #f05a5a;
+                       color: white;
+                       padding: 10px 20px;
+                       display: flex;
+                       justify-content: space-between;
+                       align-items: center;
+                   }
+                   .header .title {
+                       font-size: 20px;
+                   }
+                   .header .date {
+                       font-size: 14px;
+                   }
+                   .header .logout {
+                       background-color: #d9534f;
+                       color: white;
+                       border: none;
+                       padding: 5px 10px;
+                       cursor: pointer;
+                   }
+                   .sidebar {
+                       width: 200px;
+                       background-color: #333;
+                       color: white;
+                       position: fixed;
+                       top: 0;
+                       bottom: 0;
+                       padding: 20px;
+                   }
+                   .sidebar .profile {
+                       text-align: center;
+                       margin-bottom: 20px;
+                   }
+                   .sidebar .profile img {
+                       border-radius: 50%;
+                   }
+                   .sidebar .menu {
+                       list-style: none;
+                       padding: 0;
+                   }
+                   .sidebar .menu li {
+                       margin: 10px 0;
+                   }
+                   .sidebar .menu li a {
+                       color: white;
+                       text-decoration: none;
+                       display: flex;
+                       align-items: center;
+                   }
+                   .sidebar .menu li a i {
+                       margin-right: 10px;
+                   }
+                   .content {
+                       margin-left: 220px;
+                       padding: 20px;
+                   }
+                   .content .button {
+                       background-color: #5bc0de;
+                       color: white;
+                       border: none;
+                       padding: 10px 20px;
+                       cursor: pointer;
+                       margin-bottom: 20px;
+                   }
+                   .content .table-container {
+                       background-color: white;
+                       padding: 20px;
+                       border-radius: 5px;
+                       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                   }
+                   .content .table-container table {
+                       width: 100%;
+                       border-collapse: collapse;
+                   }
+                   .content .table-container table th, .content .table-container table td {
+                       border: 1px solid #ddd;
+                       padding: 8px;
+                       text-align: left;
+                   }
+                   .content .table-container table th {
+                       background-color: #f2f2f2;
+                   }
+                   .content .table-container table td img {
+                       width: 50px;
+                       height: auto;
+                   }
+                   .content .table-container table .actions button {
+                       background-color: #5bc0de;
+                       color: white;
+                       border: none;
+                       padding: 5px 10px;
+                       cursor: pointer;
+                       margin-right: 5px;
+                   }
+                   .content .table-container table .actions .delete {
+                       background-color: #d9534f;
+                   }
+             </style>
+            </head>
+            <body>
+             <div class="header">
+              <div class="title">
+               PERPUS.KU
+              </div>
+              <div class="date">
+               Today : 30-11-2024
+              </div>
+              <button class="logout">
+               Logout
+              </button>
+             </div>
+             <div class="sidebar">
+              <div class="profile">
+               <img alt="Profile Picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
+              </div>
+              <ul class="menu">
+               <li>
+                <a href="indexadmin.html">
+                 <i class="fas fa-tachometer-alt">
+                 </i>
+                 Dashboard
+                </a>
+               </li>
+               <li>
+                <a href="dataanggota.html">
+                 <i class="fas fa-users">
+                 </i>
+                 Data Anggota
+                </a>
+               </li>
+               <li>
+                <a href="databuku.html">
+                 <i class="fas fa-book">
+                 </i>
+                 Data Buku
+                </a>
+               </li>
+               <li>
+                <a href="transaksi.html">
+                 <i class="fas fa-exchange-alt">
+                 </i>
+                 Transaksi
+                </a>
+               </li>
+              </ul>
+             </div>
+             <div class="content">
+              <button class="button">
+               Tambah Data
+              </button>
+              <div class="table-container">
+               <h2>
+                Data Buku
+               </h2>
+               <div>
+                <label for="records">
+                 records per page
+                </label>
+                <select id="records">
+                 <option value="10">
+                  10
+                 </option>
+                </select>
+                <label for="search">
+                 Search:
+                </label>
+                <input id="search" type="text"/>
+               </div>
+               <table>
+                <thead>
+                 <tr>
+                  <th>
+                   #
+                  </th>
+                  <th>
+                   Judul
+                  </th>
+                  <th>
+                   Pengarang
+                  </th>
+                  <th>
+                   Penerbit
+                  </th>
+                  <th>
+                   Tahun Terbit
+                  </th>
+                  <th>
+                   Jumlah Buku
+                  </th>
+                  <th>
+                   Gambar
+                  </th>
+                  <th>
+                   Aksi
+                  </th>
+                 </tr>
+                </thead>
+                <tbody>
+                 <tr>
+                  <td>
+                   1
+                  </td>
+                  <td>
+                   PHP Komplet Vol. 1
+                  </td>
+                  <td>
+                   Jubilee Edward Clark
+                  </td>
+                  <td>
+                   Alex Media Komputindo
+                  </td>
+                  <td>
+                   2018
+                  </td>
+                  <td>
+                   90
+                  </td>
+                  <td>
+                   <img alt="PHP Komplet Vol. 1 Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/hpR0mtbsKzK3MNVeE2IQIvpYugRVeSyKLeJiG1NeyfMDyO6dC.jpg" width="50"/>
+                  </td>
+                  <td class="actions">
+                   <button>
+                    Edit
+                   </button>
+                   <button class="delete">
+                    Hapus
+                   </button>
+                  </td>
+                 </tr>
+                 <tr>
+                  <td>
+                   2
+                  </td>
+                  <td>
+                   Pemrograman Bootstrap Untuk Pemula
+                  </td>
+                  <td>
+                   Jubilee Enterprise
+                  </td>
+                  <td>
+                   Alex Media Komputindo
+                  </td>
+                  <td>
+                   2016
+                  </td>
+                  <td>
+                   25
+                  </td>
+                  <td>
+                   <img alt="Pemrograman Bootstrap Untuk Pemula Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/gEF5UyeIIsW5BCJf0SmdZM3DLVfkhl3fZGlgcElaCVxexO6dC.jpg" width="50"/>
+                  </td>
+                  <td class="actions">
+                   <button>
+                    Edit
+                   </button>
+                   <button class="delete">
+                    Hapus
+                   </button>
+                  </td>
+                 </tr>
+                 <tr>
+                  <td>
+                   3
+                  </td>
+                  <td>
+                   Otodidak Pemrograman Python
+                  </td>
+                  <td>
+                   Jubilee Enterprise
+                  </td>
+                  <td>
+                   Alex Media Komputindo
+                  </td>
+                  <td>
+                   2017
+                  </td>
+                  <td>
+                   56
+                  </td>
+                  <td>
+                   <img alt="Otodidak Pemrograman Python Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/BrDmNUyOidrLIBHBpRaIbQv0sFIquVsVuqQRI5jfoJqI7o3JA.jpg" width="50"/>
+                  </td>
+                  <td class="actions">
+                   <button>
+                    Edit
+                   </button>
+                   <button class="delete">
+                    Hapus
+                   </button>
+                  </td>
+                 </tr>
+                 <tr>
+                  <td>
+                   4
+                  </td>
+                  <td>
+                   Aplikasi Menggunakan CodeIgniter
+                  </td>
+                  <td>
+                   Moch Kautsar Sophian
+                  </td>
+                  <td>
+                   Deepublish
+                  </td>
+                  <td>
+                   2016
+                  </td>
+                  <td>
+                   8
+                  </td>
+                  <td>
+                   <img alt="Aplikasi Menggunakan CodeIgniter Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/nMIXiAfM6BQRG66Jn2n8WjnEtgdDXC0CBlwY2rkAmDTK7o3JA.jpg" width="50"/>
+                  </td>
+                  <td class="actions">
+                   <button>
+                    Edit
+                   </button>
+                   <button class="delete">
+                    Hapus
+                   </button>
+                  </td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+             </div>
+            </body>
+           </html>
