@@ -39,7 +39,7 @@
             position: fixed;
             top: 0;
             bottom: 0;
-            padding: 20px;
+            padding-top: 20px;
         }
         .sidebar .profile {
             text-align: center;
@@ -53,19 +53,18 @@
             padding: 0;
         }
         .sidebar .menu li {
-            margin: 10px 0;
+            padding: 10px 20px;
         }
         .sidebar .menu li a {
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
         }
-        .sidebar .menu li a i {
-            margin-right: 10px;
+        .sidebar .menu li a:hover {
+            background-color: #575757;
+            display: block;
         }
         .content {
-            margin-left: 220px;
+            margin-left: 200px;
             padding: 20px;
         }
         .content .button {
@@ -94,11 +93,7 @@
         .content .table-container table th {
             background-color: #f2f2f2;
         }
-        .content .table-container table td img {
-            width: 50px;
-            height: auto;
-        }
-        .content .table-container table .actions button {
+        .content .table-container .actions button {
             background-color: #5bc0de;
             color: white;
             border: none;
@@ -106,7 +101,7 @@
             cursor: pointer;
             margin-right: 5px;
         }
-        .content .table-container table .actions .delete {
+        .content .table-container .actions .delete {
             background-color: #d9534f;
         }
   </style>
@@ -129,69 +124,42 @@
    </div>
    <ul class="menu">
     <li>
-<<<<<<< HEAD
-     <a href="#">
-=======
      <a href="indexadmin.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
       <i class="fas fa-tachometer-alt">
       </i>
       Dashboard
      </a>
     </li>
     <li>
-<<<<<<< HEAD
-     <a href="indexadmin.html">
-=======
      <a href="dataanggota.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
       <i class="fas fa-users">
       </i>
       Data Anggota
      </a>
     </li>
     <li>
-<<<<<<< HEAD
-     <a href="dataanggota.html">
-=======
      <a href="databuku.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
       <i class="fas fa-book">
       </i>
       Data Buku
      </a>
     </li>
     <li>
-<<<<<<< HEAD
-     <a href="databuku.html">
-=======
      <a href="transaksi.html">
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
       <i class="fas fa-exchange-alt">
       </i>
       Transaksi
      </a>
     </li>
-<<<<<<< HEAD
-</li>
-    <a href="transaksi.html">
    </ul>
   </div>
   <div class="content">
    <button class="button">
     Tambah Data
-=======
-   </ul>
-  </div>
-  <div class="content">
-    <a href="tambahbuku.html"> 
-   <button class="button">
-    +Tambah Data
->>>>>>> 7055561ac9964f52496fb11490a73bbea86be047
    </button>
    <div class="table-container">
     <h2>
-     Data Buku
+     Data Transaksi
     </h2>
     <div>
      <label for="records">
@@ -214,22 +182,19 @@
         #
        </th>
        <th>
-        Judul
+        Nama Anggota
        </th>
        <th>
-        Pengarang
+        Judul Buku
        </th>
        <th>
-        Penerbit
+        Tanggal Pinjam
        </th>
        <th>
-        Tahun Terbit
+        Tanggal Kembali
        </th>
        <th>
-        Jumlah Buku
-       </th>
-       <th>
-        Gambar
+        Status
        </th>
        <th>
         Aksi
@@ -242,22 +207,19 @@
         1
        </td>
        <td>
+        John Doe
+       </td>
+       <td>
         PHP Komplet Vol. 1
        </td>
        <td>
-        Jubilee Edward Clark
+        01-06-2020
        </td>
        <td>
-        Alex Media Komputindo
+        15-06-2020
        </td>
        <td>
-        2018
-       </td>
-       <td>
-        90
-       </td>
-       <td>
-        <img alt="PHP Komplet Vol. 1 Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/hpR0mtbsKzK3MNVeE2IQIvpYugRVeSyKLeJiG1NeyfMDyO6dC.jpg" width="50"/>
+        Kembali
        </td>
        <td class="actions">
         <button>
@@ -273,22 +235,19 @@
         2
        </td>
        <td>
+        Jane Smith
+       </td>
+       <td>
         Pemrograman Bootstrap Untuk Pemula
        </td>
        <td>
-        Jubilee Enterprise
+        05-06-2020
        </td>
        <td>
-        Alex Media Komputindo
+        19-06-2020
        </td>
        <td>
-        2016
-       </td>
-       <td>
-        25
-       </td>
-       <td>
-        <img alt="Pemrograman Bootstrap Untuk Pemula Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/gEF5UyeIIsW5BCJf0SmdZM3DLVfkhl3fZGlgcElaCVxexO6dC.jpg" width="50"/>
+        Kembali
        </td>
        <td class="actions">
         <button>
@@ -304,22 +263,19 @@
         3
        </td>
        <td>
+        Michael Johnson
+       </td>
+       <td>
         Otodidak Pemrograman Python
        </td>
        <td>
-        Jubilee Enterprise
+        10-06-2020
        </td>
        <td>
-        Alex Media Komputindo
+        24-06-2020
        </td>
        <td>
-        2017
-       </td>
-       <td>
-        56
-       </td>
-       <td>
-        <img alt="Otodidak Pemrograman Python Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/BrDmNUyOidrLIBHBpRaIbQv0sFIquVsVuqQRI5jfoJqI7o3JA.jpg" width="50"/>
+        Kembali
        </td>
        <td class="actions">
         <button>
@@ -335,22 +291,19 @@
         4
        </td>
        <td>
+        Emily Davis
+       </td>
+       <td>
         Aplikasi Menggunakan CodeIgniter
        </td>
        <td>
-        Moch Kautsar Sophian
+        15-06-2020
        </td>
        <td>
-        Deepublish
+        29-06-2020
        </td>
        <td>
-        2016
-       </td>
-       <td>
-        8
-       </td>
-       <td>
-        <img alt="Aplikasi Menggunakan CodeIgniter Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/nMIXiAfM6BQRG66Jn2n8WjnEtgdDXC0CBlwY2rkAmDTK7o3JA.jpg" width="50"/>
+        Kembali
        </td>
        <td class="actions">
         <button>
