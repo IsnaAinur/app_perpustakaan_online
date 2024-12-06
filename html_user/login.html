@@ -1,11 +1,12 @@
-<html>
- <head>
-  <title>
-   Perpustakaan Online
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Online</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f8f1eb;
@@ -22,6 +23,7 @@
             border-radius: 10px;
             width: 300px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .logo img {
             width: 100px;
@@ -30,47 +32,18 @@
         .logo h1 {
             margin: 10px 0 5px;
             font-size: 24px;
-            color: #000;
+            color: #fff;
         }
         .logo p {
             margin: 0;
             font-size: 14px;
-            color: #000;
-        }
-        .social-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-        .social-buttons button {
-            width: 48%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .divider {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-        }
-        .divider::before,
-        .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background-color: #ccc;
-        }
-        .divider span {
-            margin: 0 10px;
-            color: #fff;
+            color: #ddd;
         }
         .input-group {
             margin: 10px 0;
         }
         .input-group input {
-            width: 100%;
+            width: 92%;
             padding: 10px;
             margin: 5px 0;
             border: 1px solid #ccc;
@@ -88,6 +61,9 @@
             font-size: 16px;
             cursor: pointer;
         }
+        .login-button:hover {
+            background-color: #ddd;
+        }
         .forgot-password {
             color: #0000ff;
             font-size: 12px;
@@ -100,38 +76,70 @@
             color: #0000ff;
             text-decoration: none;
         }
-  </style>
- </head>
- <body>
-  <div class="container">
-   <div class="login-box">
-    <div class="logo">
-     <img alt="Logo of an open book with red and orange pages and blue cover" height="100" src="https://storage.googleapis.com/a1aa/image/3RZPf6rmKH1PFCsQVlitLrJ9lORZ1kCYsxdePfHb6oVhf88OB.jpg" width="100"/>
-     <h1>
-      Perpustakaan
-     </h1>
-     <p>
-      perpustakaan online
-     </p>
+        .error-message {
+            color: #ff4d4d;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="https://storage.googleapis.com/a1aa/image/3RZPf6rmKH1PFCsQVlitLrJ9lORZ1kCYsxdePfHb6oVhf88OB.jpg" alt="Logo">
+                <h1>Perpustakaan</h1>
+                <p>perpustakaan online</p>
+            </div>
+            <div class="input-group">
+                <input id="email" type="text" placeholder="Email">
+                <span id="emailError" class="error-message">Email harus diisi!</span>
+            </div>
+            <div class="input-group">
+                <input id="password" type="password" placeholder="Kata Sandi">
+                <span id="passwordError" class="error-message">Kata sandi harus diisi!</span>
+            </div>
+            <button class="login-button" onclick="validateForm()">Masuk</button>
+            <div class="forgot-password">
+                <a href="lupakatasandi.html">Lupa Kata Sandi?</a>
+            </div>
+            <div class="register">
+                Tidak punya Akun? <a href="signup.html">Daftar</a>
+            </div>
+        </div>
     </div>
-    <div class="input-group">
-     <input placeholder="Email" type="text"/>
-     <input placeholder="Kata Sandi" type="password"/>
-    </div>
-    <button class="login-button">
-     Masuk
-    </button>
-    <div class="forgot-password">
-        <a href="lupakatasandi.html">
-    Lupa Kata Sandi?</a>
-    </div>    
-    <div class="register">
-     Tidak punya Akun?
-     <a href="signup.html">
-      Daftar
-     </a>
-    </div>
-   </div>
-  </div>
- </body>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+
+            // Reset pesan error
+            emailError.style.display = "none";
+            passwordError.style.display = "none";
+
+            let isValid = true;
+
+            // Validasi input email
+            if (email === "") {
+                emailError.style.display = "block";
+                isValid = false;
+            }
+
+            // Validasi input password
+            if (password === "") {
+                passwordError.style.display = "block";
+                isValid = false;
+            }
+
+            // Jika validasi lolos, arahkan ke halaman utama
+            if (isValid) {
+                alert("Login berhasil!");
+                window.location.href = "index.html"; // Ganti dengan URL halaman utama
+            }
+        }
+    </script>
+</body>
 </html>
