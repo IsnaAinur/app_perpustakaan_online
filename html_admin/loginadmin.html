@@ -1,76 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8"
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login : One-IT Library</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-IT Library: Login</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Untuk ikon -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
         }
+
         .container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
+            width: 300px;
         }
-        .container h1 {
-            color: red;
+
+        h1 {
             font-size: 24px;
-        }
-        .login-box {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            text-align: left;
-        }
-        .login-box h2 {
-            font-size: 16px;
             margin-bottom: 20px;
+            color: #333;
         }
+
         .input-group {
             margin-bottom: 15px;
+            position: relative;
         }
+
         .input-group i {
-            padding: 10px;
-            background: #ddd;
-            border-right: 1px solid #ccc;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #999;
         }
+
         .input-group input {
-            padding: 10px;
-            width: calc(100% - 40px);
+            width: 80%;
+            padding: 10px 10px 10px 35px;
             border: 1px solid #ccc;
-            border-left: none;
+            border-radius: 5px;
+            font-size: 14px;
         }
+
         .button-group {
-            text-align: right;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
         }
-        .button-group button {
+
+        .login-btn, .cancel-btn {
             padding: 10px 20px;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
-        }
-        .button-group .login-btn {
-            background-color: #007bff;
+            font-size: 14px;
             color: white;
         }
-        .button-group .cancel-btn {
-            background-color: #dc3545;
-            color: white;
+
+        .login-btn {
+            background-color: #4CAF50;
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+        }
+
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+
+        .cancel-btn:hover {
+            background-color: #e53935;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>One-IT Library: Login</h1>
+        <h1>PERPUS.KU: Login</h1>
         <div class="login-box">
             <h2>Masukkan Username dan Password</h2>
             <form id="login-form" onsubmit="handleLogin(event)">
@@ -89,5 +105,23 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'admin') {
+                window.location.href = "indexadmin.html";
+            } else {
+                alert('Username atau password salah!');
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('login-form').reset();
+        }
+    </script>
 </body>
 </html>
