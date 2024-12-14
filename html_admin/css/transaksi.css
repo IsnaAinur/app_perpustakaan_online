@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.header {
+    background-color: #f05a5a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .title {
+    font-size: 20px;
+}
+.header .date {
+    font-size: 14px;
+}
+.header .logout {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-top: 20px;
+}
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sidebar .profile img {
+    border-radius: 50%;
+}
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+.sidebar .menu li {
+    padding: 10px 20px;
+}
+.sidebar .menu li a {
+    color: white;
+    text-decoration: none;
+}
+.sidebar .menu li a:hover {
+    background-color: #575757;
+    display: block;
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+.content .button {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.content .table-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.content .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.content .table-container table th, .content .table-container table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.content .table-container table th {
+    background-color: #f2f2f2;
+}
+.content .table-container .actions button {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.content .table-container .actions .delete {
+    background-color: #d9534f;
+}

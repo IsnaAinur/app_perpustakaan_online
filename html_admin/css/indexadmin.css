@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .title {
+    font-size: 20px;
+}
+.header .logout {
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.sidebar {
+    width: 200px;
+    background-color: #222;
+    color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-top: 20px;
+}
+.sidebar img {
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+}
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #575757;
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+.content h1 {
+    font-size: 24px;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.stats .stat {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+.stats .stat i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.stats .stat p {
+    margin: 5px 0;
+}
+.table-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-container table, .table-container th, .table-container td {
+    border: 1px solid #ddd;
+}
+.table-container th, .table-container td {
+    padding: 10px;
+    text-align: left;
+}
+.table-container th {
+    background-color: #f2f2f2;
+}
+.table-container .late {
+    color: red;
+}
+.info-box {
+    background-color: #e7f3e7;
+    padding: 20px;
+    border-radius: 5px;
+}
