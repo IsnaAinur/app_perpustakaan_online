@@ -5,7 +5,7 @@ body {
     background-color: #f4f4f4;
 }
 .header {
-    background-color: #f05a5a;
+    background-color: #333;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -14,9 +14,6 @@ body {
 }
 .header .title {
     font-size: 20px;
-}
-.header .date {
-    font-size: 14px;
 }
 .header .logout {
     background-color: #d9534f;
@@ -27,47 +24,43 @@ body {
 }
 .sidebar {
     width: 200px;
-    background-color: #333;
+    background-color: #222;
     color: white;
     position: fixed;
     top: 0;
     bottom: 0;
-    padding: 20px;
+    padding-top: 20px;
 }
-.sidebar .profile {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.sidebar .profile img {
+.sidebar img {
+    display: block;
+    margin: 0 auto 10px;
     border-radius: 50%;
 }
-.sidebar .menu {
-    list-style: none;
-    padding: 0;
-}
-.sidebar .menu li {
-    margin: 10px 0;
-}
-.sidebar .menu li a {
+.sidebar a {
+    display: block;
     color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    display: flex;
-    align-items: center;
 }
-.sidebar .menu li a i {
-    margin-right: 10px;
+.sidebar a:hover {
+    background-color: #575757;
 }
 .content {
-    margin-left: 220px;
+    margin-left: 200px;
     padding: 20px;
 }
-.content .button {
-    background-color: #5bc0de;
+.content .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.content .top-bar button {
+    background-color: #0275d8;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 .content .table-container {
     background-color: white;
@@ -89,16 +82,22 @@ body {
 }
 .content .table-container table td img {
     width: 50px;
-    height: auto;
+    height: 50px;
+    border-radius: 50%;
 }
-.content .table-container table .actions button {
-    background-color: #5bc0de;
-    color: white;
-    border: none;
+.content .table-container table td .btn {
     padding: 5px 10px;
+    border: none;
     cursor: pointer;
-    margin-right: 5px;
+    color: white;
+    border-radius: 3px;
 }
-.content .table-container table .actions .delete {
+.content .table-container table td .btn.details {
+    background-color: #5bc0de;
+}
+.content .table-container table td .btn.edit {
+    background-color: #5cb85c;
+}
+.content .table-container table td .btn.delete {
     background-color: #d9534f;
 }
