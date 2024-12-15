@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f8f1eb;
+    background-color: #2b6a9b;
 }
 .container {
     display: flex;
@@ -13,9 +13,8 @@ body {
     background-color: #2b6a9b;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 350px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .logo img {
     width: 100px;
@@ -43,7 +42,7 @@ body {
     font-size: 14px;
 }
 .login-button {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     margin: 20px 0;
     background-color: #fff;

@@ -4,45 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERPUS.KU SIGN UP</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="css/signup.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="container">
-   <div class="login-box">
-    <div class="logo">
-     <img alt="Logo of an open book with red and orange pages and blue background" height="100" src="https://storage.googleapis.com/a1aa/image/3W1epFxXAbxCA6aOqckJoIRaPZ8WCmxpj2bJYz5fkeroje8OB.jpg" width="100"/>
-     <h1>
-      Perpustakaan
-     </h1>
-     <p>
-      perpustakaan online
-     </p>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="css/signup.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-box">
+            <div class="logo">
+                <img src="https://storage.googleapis.com/a1aa/image/3W1epFxXAbxCA6aOqckJoIRaPZ8WCmxpj2bJYz5fkeroje8OB.jpg" alt="Logo"/>
+                <h1>PERPUS.KU</h1>
+                <p>perpustakaan online</p>
+            </div>
+            <div class="input-group">
+                <input id="email" type="email" placeholder="Email">
+                <span id="emailError" class="error-message">Email harus diisi!</span>
+            </div>
+            <div class="input-group">
+                <input id="namaPengguna" type="text" placeholder="Nama Pengguna">
+                <span id="namaError" class="error-message">Nama pengguna harus diisi!</span>
+            </div>
+            <div class="input-group">
+                <input id="password" type="password" placeholder="Kata Sandi">
+                <span id="passwordError" class="error-message">Kata sandi harus diisi!</span>
+            </div>
+            <div class="input-group">
+                <input id="tanggalLahir" type="text" placeholder="Tanggal Lahir">
+                <span id="tanggalLahirError" class="error-message">Tanggal lahir harus diisi!</span>
+            </div>
+            <button class="signup-button" onclick="validateSignupForm()">Daftar</button>
+            <div class="login-link">
+                Sudah punya akun? <a href="login.html">Masuk</a>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-     <input placeholder="Email" type="email"/>
-    </div>
-    <div class="form-group">
-     <input placeholder="Nama Pengguna" type="text"/>
-    </div>
-    <div class="form-group">
-     <input placeholder="Kata Sandi" type="password"/>
-     <i class="fas fa-eye">
-     </i>
-    </div>
-    <div class="form-group">
-     <input placeholder="Tanggal Lahir" type="text"/>
-     <i class="fas fa-calendar-alt">
-     </i>
-    </div>
-    <button class="submit-button"onclick="location.href='selamatDatang.html';">Daftar</button>
-    <p class="login-link">
-     Sudah punya akun ?
-     <a href="login.html">
-      Masuk
-     </a>
-    </p>
-   </div>
-  </div>
- </body>
+
+    <script>
+        function validateSignupForm() {
+            const email = document.getElementById("email").value.trim();
+            const namaPengguna = document.getElementById("namaPengguna").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const tanggalLahir = document.getElementById("tanggalLahir").value.trim();
+
+            const emailError = document.getElementById("emailError");
+            const namaError = document.getElementById("namaError");
+            const passwordError = document.getElementById("passwordError");
+            const tanggalLahirError = document.getElementById("tanggalLahirError");
+
+            // Reset pesan error
+            emailError.style.display = "none";
+            namaError.style.display = "none";
+            passwordError.style.display = "none";
+            tanggalLahirError.style.display = "none";
+
+            let isValid = true;
+
+            // Validasi input email
+            if (email === "") {
+                emailError.style.display = "block";
+                isValid = false;
+            }
+
+            // Validasi input nama pengguna
+            if (namaPengguna === "") {
+                namaError.style.display = "block";
+                isValid = false;
+            }
+
+            // Validasi input password
+            if (password === "") {
+                passwordError.style.display = "block";
+                isValid = false;
+            }
+
+            // Validasi input tanggal lahir
+            if (tanggalLahir === "") {
+                tanggalLahirError.style.display = "block";
+                isValid = false;
+            }
+
+            // Jika validasi lolos, arahkan ke halaman selamat datang
+            if (isValid) {
+                alert("Pendaftaran berhasil!");
+                window.location.href = "selamatdatang.html"; // Ganti dengan URL halaman selamat datang
+            }
+        }
+    </script>
+</body>
 </html>
