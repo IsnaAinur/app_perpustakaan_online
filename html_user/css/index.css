@@ -1,0 +1,97 @@
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .header {
+            background-color: #1e81b0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            position: relative;
+        }
+        .header .user-icon {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+            background-color: #1e81b0;
+            color: white;
+        }
+        .category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .category h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .category-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .category-buttons button {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .section p {
+            margin: 5px 0 15px;
+            font-size: 16px;
+        }
+        .section .see-all {
+            text-align: right;
+            font-size: 16px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .books {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .book {
+            width: calc(33.333% - 10px);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .footer i {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }

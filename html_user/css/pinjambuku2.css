@@ -1,0 +1,77 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background-color: #2a6b8d;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.back-arrow {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.book-detail {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+.book-detail img {
+    width: 100%;
+    height: auto;
+}
+.book-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.book-info {
+    margin-top: 10px;
+    font-size: 16px;
+}
+.loan-section {
+    margin-top: 20px;
+    text-align: center;
+}
+.loan-duration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.loan-duration span {
+    font-size: 18px;
+    margin: 0 10px;
+}
+.loan-duration input {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 5px;
+}
+.loan-duration button {
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.profile-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
