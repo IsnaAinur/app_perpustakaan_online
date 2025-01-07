@@ -1,15 +1,26 @@
-body {
+/* Reset */
+body, h1, h2, h3, p, a {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
 .header {
     background-color: #1e73a9;
     color: white;
+    text-align: center;
     padding: 20px;
-    text-align: left;
     font-size: 24px;
 }
+
+/* Navigation Tabs */
 .nav-tabs {
     display: flex;
     background-color: #d3d3d3;
@@ -19,33 +30,88 @@ body {
 .nav-tabs a {
     font-size: 18px;
     color: black;
-    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
-.nav-tabs .active {
-    border-bottom: 3px solid black;
-}
-.content {
+.nav-tabs a:hover {
     background-color: #1e73a9;
     color: white;
-    text-align: center;
-    padding: 100px 20px;
-    font-size: 18px;
 }
+.nav-tabs .active {
+    background-color: #1e73a9;
+    color: white;
+}
+
+/* Content Section */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1e73a9;
+}
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.book-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.book-item img {
+    max-width: 100px; /* Atur lebar maksimum gambar */
+    height: auto; /* Jaga rasio gambar */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block; /* Memastikan gambar tetap berada di atas teks */
+    margin-left: auto;
+    margin-right: auto; /* Pusatkan gambar */
+}
+.book-item h3 {
+    font-size: 16px; /* Ukuran teks judul */
+    color: #333;
+    margin-top: 10px;
+}
+.book-item p {
+    font-size: 14px; /* Ukuran teks deskripsi */
+    color: #555;
+    margin-top: 5px;
+}
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
 .footer {
     display: flex;
     justify-content: space-around;
-    background-color: white;
+    align-items: center;
+    background-color: #1e73a9;
+    color: white;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
-    border-top: 1px solid #d3d3d3;
 }
 .footer a {
     font-size: 24px;
-    color: black;
-    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+.footer a:hover {
+    color: #f4f4f4;
 }
 .footer a.active {
-    color: #1e73a9;
+    color: white;
 }

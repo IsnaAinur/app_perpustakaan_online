@@ -1,99 +1,138 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f1eb;
 }
-.container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
+/* Header */
 .header {
     display: flex;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    background-color: #2a6f9e;
+    color: #ffffff;
 }
-.header i {
-    font-size: 24px;
+
+.header a {
+    text-decoration: none;
+    color: #ffffff;
     margin-right: 10px;
+    font-size: 20px;
 }
+
 .header h1 {
     font-size: 20px;
     margin: 0;
 }
+
+/* Profile Section */
 .profile-section {
-    margin-top: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
+
 .profile-section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2a6f9e;
+    text-align: center;
 }
+
 .profile-picture {
-    display: flex;
-    align-items: center;
+    text-align: center;
     margin-bottom: 20px;
 }
+
 .profile-picture img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    background-color: #ccc;
-    margin-right: 10px;
+    border: 2px solid #2a6f9e;
 }
+
 .profile-picture p {
-    margin: 0;
+    margin-top: 10px;
     font-size: 14px;
-    color: #666;
+    color: #555;
+    cursor: pointer;
 }
-.profile-picture p span {
-    display: block;
-    color: #000;
-}
+
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
+    color: #333;
 }
+
 .form-group input {
-    width: 100%;
+    width: calc(100% - 40px); /* Lebar diseragamkan */
     padding: 10px;
-    font-size: 14px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 0 auto;
+    display: block;
 }
-.form-group .password-group {
-    display: flex;
-    align-items: center;
+
+/* Password Group */
+.password-group {
+    position: relative;
 }
-.form-group .password-group input {
-    flex: 1;
+
+.password-group input {
+    width: calc(100% - 40px); /* Sama seperti input lainnya */
+    padding-right: 40px; /* Ruang untuk ikon mata */
 }
-.form-group .password-group i {
-    margin-left: 10px;
+
+.password-group i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 12px;
+    color: #007bff;
+    margin-bottom: 20px;
     cursor: pointer;
 }
-.forgot-password {
-    font-size: 12px;
-    color: #999;
-    text-align: right;
-    margin-bottom: 20px;
-}
+
 .save-button {
-    display: block;
     width: 100%;
     padding: 10px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #007bff;
+    background-color: #2a6f9e;
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #1e5a7e;
+}
+
+/* Responsiveness */
+@media (max-width: 500px) {
+    .profile-section {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
 }
