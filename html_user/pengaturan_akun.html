@@ -3,85 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERPUS.KU PENGATURAN AKUN</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="css/pengaturanakun.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="header">
-    <a href="pengaturan.html"> 
-    <i class="fas fa-arrow-left"></i>
-    </a>
-    <h1>
-     Pengaturan Akun
-    </h1>
-   </div>
-   <div class="profile-section">
-    <h2>
-     Profile
-    </h2>
-    <div class="profile-picture">
-     <img alt="Profile picture placeholder" height="60" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="60"/>
-     <p>
-      <span>
-       Foto profil
-      </span>
-      Ketuk untuk mengubah
-     </p>
+    <title>PERPUS.KU - Pengaturan Akun</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="css/pengaturanakun.css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="pengaturan.html">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1>Pengaturan Akun</h1>
     </div>
-    <div class="form-group">
-     <label for="tentang-akun">
-      Tentang Akun
-     </label>
-     <input id="tentang-akun" placeholder="Tentang Akun" type="text"/>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <h2>Profil</h2>
+        <div class="profile-picture">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Foto Profil">
+            <p><span>Foto profil</span> - Ketuk untuk mengubah</p>
+        </div>
+
+        <div class="form-group">
+            <label for="tentang-akun">Tentang Akun</label>
+            <input id="tentang-akun" type="text" placeholder="Tentang Akun">
+        </div>
+
+        <div class="form-group">
+            <label for="nama-pengguna">Nama Pengguna</label>
+            <input id="nama-pengguna" type="text" placeholder="Nama Pengguna">
+        </div>
+
+        <div class="form-group">
+            <label for="nama-lengkap">Nama Lengkap</label>
+            <input id="nama-lengkap" type="text" placeholder="Nama Lengkap">
+        </div>
+
+        <div class="form-group">
+            <label for="tanggal-lahir">Tanggal Lahir</label>
+            <input id="tanggal-lahir" type="date">
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <input id="alamat" type="text" placeholder="Alamat">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="kata-sandi">Kata Sandi</label>
+            <div class="password-group">
+                <input id="kata-sandi" type="password" placeholder="Kata Sandi">
+                <i class="fas fa-eye" onclick="togglePasswordVisibility()"></i>
+            </div>
+        </div>
+
+        <div class="forgot-password">Lupa Kata Sandi?</div>
+
+        <button class="save-button">Simpan</button>
     </div>
-    <div class="form-group">
-     <label for="nama-pengguna">
-      Nama Pengguna
-     </label>
-     <input id="nama-pengguna" placeholder="Nama Pengguna" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="nama-lengkap">
-      Nama Lengkap
-     </label>
-     <input id="nama-lengkap" placeholder="Nama Lengkap" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="tanggal-lahir">
-      Tanggal Lahir
-     </label>
-     <input id="tanggal-lahir" type="date"/>
-    </div>
-    <div class="form-group">
-     <label for="alamat">
-      Alamat
-     </label>
-     <input id="alamat" placeholder="Alamat" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="email">
-      Email
-     </label>
-     <input id="email" placeholder="Email" type="email"/>
-    </div>
-    <div class="form-group">
-     <label for="kata-sandi">
-      Kata Sandi
-     </label>
-     <div class="password-group">
-      <input id="kata-sandi" placeholder="Kata Sandi" type="password"/>
-      <i class="fas fa-eye">
-      </i>
-     </div>
-    </div>
-    <div class="forgot-password">
-     Lupa Kata Sandi?
-    </div>
-    <button class="save-button">
-     Simpan
-    </button>
-   </div>
-  </div>
- </body>
+
+    <script>
+        // Toggle visibility of the password
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('kata-sandi');
+            const icon = passwordInput.nextElementSibling;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
 </html>
