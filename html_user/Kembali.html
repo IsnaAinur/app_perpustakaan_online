@@ -3,26 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERPUS.KU KEMBALI BUKU</title>
+    <title>Kembalikan Buku</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="css/kembali.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="header">
-        Perpustakaan
-    </div>
-    <div class="nav-tabs">
+    <header class="header">
+        <h1>Perpustakaan</h1>
+    </header>
+
+    <nav class="nav-tabs">
         <a href="Pinjam.html">Pinjaman</a>
-        <a href="" class="active">Kembali</a>
-    </div>
-    <div class="content">
-        Belum ada buku yang dikembalikan
-    </div>
-    <div class="footer">
-        <a href="index.html"><i class="fas fa-home"></i></a>
-        <a href="CariBuku.html"><i class="fas fa-search"></i></a>
-        <a href="#" class="active"><i class="fas fa-bars"></i></a>
-        <a href="Notifikasi.html"><i class="fas fa-bell"></i></a>
-    </div>
+        <a href="#" class="active">Kembalikan</a>
+    </nav>
+
+    <main class="content">
+        <h2>Daftar Buku yang Sudah Dikembalikan</h2>
+        <div class="books-grid">
+            <!-- Contoh Buku yang Dikembalikan -->
+            <div class="book-item">
+                <img src="https://via.placeholder.com/150" alt="Buku 1">
+                <h3>Judul Buku 1</h3>
+                <p>Pengarang: Penulis 1</p>
+                <p>Tanggal Dikembalikan: 01 Januari 2025</p>
+            </div>
+            <div class="book-item">
+                <img src="https://via.placeholder.com/150" alt="Buku 2">
+                <h3>Judul Buku 2</h3>
+                <p>Pengarang: Penulis 2</p>
+                <p>Tanggal Dikembalikan: 05 Januari 2025</p>
+            </div>
+            <div class="book-item">
+                <img src="https://via.placeholder.com/150" alt="Buku 3">
+                <h3>Judul Buku 3</h3>
+                <p>Pengarang: Penulis 3</p>
+                <p>Tanggal Dikembalikan: 10 Januari 2025</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" aria-label="Beranda"><i class="fas fa-home"></i></a>
+        <a href="CariBuku.html" aria-label="Cari Buku"><i class="fas fa-search"></i></a>
+        <a href="#" class="active" aria-label="Menu"><i class="fas fa-bars"></i></a>
+        <a href="pengaturan.html" aria-label="Pengaturan"><i class="fas fa-user-circle user-icon"></i></a>
+    </footer>
 </body>
 </html>

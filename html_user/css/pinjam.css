@@ -1,59 +1,187 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+/* Notifikasi */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
+
+/* Notifikasi muncul jika tertarget */
+:target.notification {
+    display: block;
+    opacity: 1;
+}
+
+/* Tombol Tutup di Notifikasi */
+.notification .close-notification {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.notification .close-notification:hover {
+    color: #c1e2c1;
+}
+
+/* Tombol Pinjam */
+.btn-pinjam {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1e73a9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-pinjam:hover {
+    background-color: #145b87;
+    transform: scale(1.05);
+}
+
+/* Reset */
+body, h1, h2, h3, p, a, button {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
 .header {
-    background-color: #1E5A8A;
-    color: black;
+    background-color: #1e73a9;
+    color: white;
     text-align: center;
     padding: 20px;
     font-size: 24px;
 }
-.nav {
+
+/* Navigation Tabs */
+.nav-tabs {
     display: flex;
-    justify-content: space-around;
     background-color: #d3d3d3;
+    justify-content: space-around;
     padding: 10px 0;
 }
-.nav a {
-    color: black;
-    text-decoration: none;
+.nav-tabs a {
     font-size: 18px;
-    padding: 5px 20px;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
-.nav a.active {
-    border-bottom: 3px solid black;
-}
-.content {
-    background-color: #1E5A8A;
-    padding: 20px;
+.nav-tabs a:hover {
+    background-color: #1e73a9;
     color: white;
 }
-.content img {
-    width: 200px;
-    border-radius: 10px;
+.nav-tabs .active {
+    background-color: #1e73a9;
+    color: white;
+}
+
+/* Content Section */
+.content {
+    padding: 20px;
+    text-align: center;
 }
 .content h2 {
-    margin: 20px 0 10px;
+    margin-bottom: 20px;
     font-size: 24px;
+    color: #1e73a9;
 }
-.content p {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #d3d3d3;
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
+.book-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.book-item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.book-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+.book-item p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+.book-item button.btn-pinjam {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1e73a9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.book-item button.btn-pinjam:hover {
+    background-color: #145b87;
+    transform: scale(1.05);
+}
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
 .footer {
     display: flex;
     justify-content: space-around;
-    background-color: white;
+    align-items: center;
+    background-color: #1e73a9;
+    color: white;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 .footer a {
-    color: black;
-    text-decoration: none;
     font-size: 24px;
+    color: white;
+    transition: color 0.3s;
+}
+.footer a:hover {
+    color: #f4f4f4;
+}
+.footer a.active {
+    color: #fdd835;
 }
