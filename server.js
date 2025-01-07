@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
@@ -101,3 +102,5 @@ app.delete('/deletebook/:judul', (req, res) => {
 app.listen(port, () => {
   console.log(`Server berjalan di http://localhost:${port}`);
 });
+=======
+>>>>>>> be200e6c5766c8fdc47b1c01f2cb175a1f137ee6
