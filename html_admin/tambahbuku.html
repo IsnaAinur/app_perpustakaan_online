@@ -1,96 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-   PERPUS.KU
-  </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERPUS.KU</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="css/tambahbuku.css" rel="stylesheet"/>
- </head>
- <body>
+</head>
+<body>
   <div class="header">
-   <div class="title">
-    PERPUS.KU
-   </div>
-   <div class="date">
-    Today : 10-11-2024
-   </div>
-   <button class="logout">
-    Logout
-   </button>
+    <div class="title">PERPUS.KU</div>
+    <div class="date">Today : 10-11-2024</div>
+    <button class="logout">Logout</button>
   </div>
   <div class="sidebar">
-   <img alt="User profile picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
-   <a href="indexadmin.html">
-    <i class="fas fa-tachometer-alt">
-    </i>
-    Dashboard
-   </a>
-   <a href="dataanggota.html">
-    <i class="fas fa-users">
-    </i>
-    Data Anggota
-   </a>
-   <a href="databuku.html">
-    <i class="fas fa-book">
-    </i>
-    Data Buku
-   </a>
-   <a href="transaksi.html">
-    <i class="fas fa-exchange-alt">
-    </i>
-    Transaksi
-   </a>
+    <img alt="User profile picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
+    <a href="indexadmin.html"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+    <a href="dataanggota.html"><i class="fas fa-users"></i>Data Anggota</a>
+    <a href="databuku.html"><i class="fas fa-book"></i>Data Buku</a>
+    <a href="transaksi.html"><i class="fas fa-exchange-alt"></i>Transaksi</a>
   </div>
   <div class="content">
-   <div class="form-container">
-    <h2>
-     Tambah Data Buku
-    </h2>
-    <div class="form-group">
-     <label for="judul">
-      Judul
-     </label>
-     <input id="judul" placeholder="Input Judul Buku" type="text"/>
+    <div class="form-container">
+      <h2>Tambah Data Buku</h2>
+      <form id="book-form" action="http://localhost:3000/addbook" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="judul">Judul</label>
+          <input id="judul" name="judul" placeholder="Input Judul Buku" type="text" required/><br>
+        </div>
+        <div class="form-group">
+          <label for="pengarang">Pengarang</label>
+          <input id="pengarang" name="pengarang" placeholder="Input Pengarang" type="text" required/><br>
+        </div>
+        <div class="form-group">
+          <label for="penerbit">Penerbit</label>
+          <input id="penerbit" name="penerbit" placeholder="Input Penerbit" type="text" required/><br>
+        </div>
+        <div class="form-group">
+          <label for="tahun-terbit">Tahun Terbit</label>
+          <input id="tahun-terbit" name="tahun_terbit" placeholder="Input Tahun Terbit" type="number" required/><br>
+        </div>
+        <div class="form-group">
+          <label for="jumlah-buku">Jumlah Buku</label>
+          <input id="jumlah-buku" name="jumlah_buku" placeholder="Input Jumlah Buku" type="number" required/><br>
+        </div>
+        <div class="form-group">
+          <label for="gambar">Gambar</label>
+          <input id="gambar" name="gambar" type="file"/><br>
+        </div>
+        <div class="form-actions">
+          <button type="reset" class="reset">Reset</button>
+          <button type="submit" class="submit">Simpan</button>
+        </div>
+      </form>
     </div>
-    <div class="form-group">
-     <label for="pengarang">
-      Pengarang
-     </label>
-     <input id="pengarang" placeholder="Input Pengarang" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="penerbit">
-      Penerbit
-     </label>
-     <input id="penerbit" placeholder="Input Penerbit" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="tahun-terbit">
-      Tahun Terbit
-     </label>
-     <input id="tahun-terbit" placeholder="Input Tahun Terbit" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="jumlah-buku">
-      Jumlah Buku
-     </label>
-     <input id="jumlah-buku" placeholder="Input Jumlah Buku" type="text"/>
-    </div>
-    <div class="form-group">
-     <label for="gambar">
-      Gambar
-     </label>
-     <input id="gambar" type="file"/>
-    </div>
-    <div class="form-actions">
-        <button type="button" onclick="window.location.href='databuku.html'">
-            Simpan
-          </button> 
-    </div>
-   </div>
   </div>
- </body>
+
+  <script>
+    // Ambil query parameter dari URL
+    const params = new URLSearchParams(window.location.search);
+    const judul = params.get('judul'); // Ambil judul dari query parameter
+
+    if (judul) {
+      // Jika ada parameter judul, ambil data buku dari API dan isi form
+      async function loadBookData() {
+        try {
+          const response = await fetch(`http://localhost:3000/books`);
+          const books = await response.json();
+          const book = books.find(b => b.judul === judul); // Cari buku berdasarkan judul
+
+          if (book) {
+            document.getElementById('judul').value = book.judul;
+            document.getElementById('pengarang').value = book.pengarang;
+            document.getElementById('penerbit').value = book.penerbit;
+            document.getElementById('tahun-terbit').value = book.tahun_terbit;
+            document.getElementById('jumlah-buku').value = book.jumlah_buku;
+          }
+        } catch (error) {
+          console.error('Error fetching book data:', error);
+        }
+      }
+
+      // Panggil fungsi untuk memuat data
+      loadBookData();
+
+      // Ubah form action untuk update data
+      const form = document.getElementById('book-form');
+      form.action = `http://localhost:3000/updatebook/${judul}?_method=PUT`;
+      form.method = 'POST'; // Tetap POST karena menggunakan method-override
+      enctype="multipart/form-data"
+    }
+  </script>
+</body>
 </html>
