@@ -27,7 +27,7 @@ db.connect(err => {
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'admin')));
+app.use(express.static(path.join(__dirname, 'html_admin')));
 
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
@@ -72,7 +72,7 @@ app.get('/books', (req, res) => {
 
 // Menambahkan route untuk root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'admin', 'databuku.html'));  // Sesuaikan dengan lokasi file HTML yang diinginkan
+    res.sendFile(path.join(__dirname, 'html_admin', 'databuku.html'));  // Sesuaikan dengan lokasi file HTML yang diinginkan
 });
 
 // UPDATE - Update book data

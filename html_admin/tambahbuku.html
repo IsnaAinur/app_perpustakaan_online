@@ -10,7 +10,7 @@
 <body>
   <div class="header">
     <div class="title">PERPUS.KU</div>
-    <div class="date">Today : 10-11-2024</div>
+    <div class="date">Today : </div>
     <button class="logout">Logout</button>
   </div>
   <div class="sidebar">
@@ -57,6 +57,23 @@
   </div>
 
   <script>
+    // Fungsi untuk mendapatkan tanggal hari ini dengan format dd-mm-yyyy
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0'); // Menambahkan angka 0 jika hari < 10
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Menambahkan angka 0 jika bulan < 10
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
+
+  // Mengatur tanggal ke elemen dengan kelas 'date'
+  function setDate() {
+    const today = new Date();
+    const formattedDate = formatDate(today); // Format tanggal menjadi dd-mm-yyyy
+    document.querySelector('.date').textContent = `Today : ${formattedDate}`; // Menampilkan tanggal
+  }
+
+  // Panggil fungsi setDate saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', setDate);
     // Ambil query parameter dari URL
     const params = new URLSearchParams(window.location.search);
     const judul = params.get('judul'); // Ambil judul dari query parameter
