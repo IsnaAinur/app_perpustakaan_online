@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 {
-    "name": "try",
+    "name": "perpus",
     "version": "1.0.0",
     "description": "Perpustakaan dengan CRUD menggunakan Node.js dan MySQL",
     "main": "server.js",
@@ -19,5 +18,3 @@
     "license": "ISC",
     "keywords": []
 }
-=======
->>>>>>> be200e6c5766c8fdc47b1c01f2cb175a1f137ee6
