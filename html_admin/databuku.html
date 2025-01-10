@@ -10,7 +10,7 @@
 <body>
   <div class="header">
     <div class="title">PERPUS.KU</div>
-    <div class="date">Today : 30-11-2024</div>
+    <div class="date">Today : </div>
     <button class="logout">Logout</button>
   </div>
   <div class="sidebar">
@@ -53,17 +53,33 @@
   </div>
 
   <script>
-    // Fungsi untuk mengambil data buku dari API dan menampilkannya
-    async function loadBooks() {
-      try {
-        const response = await fetch('http://localhost:3000/books');
- // Pastikan API berjalan di localhost dan port yang sesuai
-        const books = await response.json();
-        const tableBody = document.querySelector('#book-table tbody');
-        tableBody.innerHTML = ''; // Clear existing table rows
+    // Fungsi untuk mendapatkan tanggal hari ini dengan format dd-mm-yyyy
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0'); // Menambahkan angka 0 jika hari < 10
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Menambahkan angka 0 jika bulan < 10
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
 
-        books.forEach((book, index) => {
-          const row = document.createElement('tr');
+  // Mengatur tanggal ke elemen dengan kelas 'date'
+  function setDate() {
+    const today = new Date();
+    const formattedDate = formatDate(today); // Format tanggal menjadi dd-mm-yyyy
+    document.querySelector('.date').textContent = `Today : ${formattedDate}`; // Menampilkan tanggal
+  }
+
+  // Panggil fungsi setDate saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', setDate);
+  // Fungsi untuk mengambil data buku dari API dan menampilkannya
+  async function loadBooks() {
+    try {
+      const response = await fetch('http://localhost:3000/books');
+      const books = await response.json();
+      const tableBody = document.querySelector('#book-table tbody');
+      tableBody.innerHTML = ''; // Clear existing table rows
+
+      books.forEach((book, index) => {
+      const row = document.createElement('tr');
           
           // Insert data into the row
           row.innerHTML = `
@@ -73,22 +89,51 @@
             <td>${book.penerbit}</td>
             <td>${book.tahun_terbit}</td>
             <td>${book.jumlah_buku}</td>
-            <td><img src="${book.gambar}" alt="${book.judul} Book Cover" height="75" width="50"></td>
+            <td><img src="${book.gambar}" alt="Cover Buku" height="75" width="50"></td>
             <td class="actions">
               <button class="edit"><a href="tambahbuku.html?judul=${encodeURIComponent(book.judul)}">Edit</a></button>
-              <button class="delete">Hapus</button>
+              <button class="delete" data-judul="${book.judul}">Hapus</button>
             </td>
           `;
           
           tableBody.appendChild(row);
         });
+        
+
+    // Tambahkan event listener untuk tombol hapus
+  document.querySelectorAll('.delete').forEach((button) => {
+  button.addEventListener('click', async (e) => {
+    const judul = e.target.closest('.delete').dataset.judul;
+    if (confirm(`Apakah Anda yakin ingin menghapus buku "${judul}"?`)) {
+      await deleteBook(judul);
+      loadBooks(); // Refresh data setelah penghapusan
+    }
+    });
+  });
+// Fungsi untuk menghapus buku
+async function deleteBook(judul) {
+    try {
+      const response = await fetch(`http://localhost:3000/deletebook/${encodeURIComponent(judul)}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        alert('Buku berhasil dihapus!');
+      } else {
+        alert('Gagal menghapus buku. Silakan coba lagi.');
+      }
+    } catch (error) {
+      console.error('Error deleting book:', error);
+      alert('Terjadi kesalahan saat menghapus buku.');
+    }
+  }
       } catch (error) {
         console.error('Error loading books:', error);
       }
     }
 
     // Panggil fungsi untuk load books ketika halaman dimuat
-    loadBooks();
+    document.addEventListener('DOMContentLoaded', loadBooks);
   </script>
 </body>
 </html>
