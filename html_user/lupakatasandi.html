@@ -4,35 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERPUS.KU</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="css/lupakatasandi.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="container">
-   <div class="logo">
-    <img alt="Logo of an open book with red and orange pages and blue cover" height="150" src="https://storage.googleapis.com/a1aa/image/DLKTQVtd7qbDA5comJa54WmqzfkwBCRWI13WQfe5uVpsiNwnA.jpg" width="150"/>
-    <h1>
-     Perpustakaan
-    </h1>
-    <p>
-     perpustakaan online
-    </p>
-   </div>
-   <div class="form-group">
-    <input placeholder="Kata Sandi Baru" type="password"/>
-   </div>
-   <div class="form-group">
-    <input placeholder="Konfirmasi Kata Sandi Baru" type="password"/>
-   </div>
-   <button class="reset-button">
-    Ubah Kata Sandi
-   </button>
-   <p class="back-to-login">
-    Kembali ke
-    <a href="login.html">
-     Masuk
-    </a>
-   </p>
-  </div>
- </body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="css/lupakatasandi.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img alt="Logo of an open book with red and orange pages and blue cover" height="150" src="https://storage.googleapis.com/a1aa/image/DLKTQVtd7qbDA5comJa54WmqzfkwBCRWI13WQfe5uVpsiNwnA.jpg" width="150"/>
+            <h1>Perpustakaan</h1>
+            <p>perpustakaan online</p>
+        </div>
+        <div class="form-group">
+            <input placeholder="Kata Sandi Baru" type="password"/>
+        </div>
+        <div class="form-group">
+            <input placeholder="Konfirmasi Kata Sandi Baru" type="password"/>
+        </div>
+        <button class="reset-button" onclick="showNotification()">Ubah Kata Sandi</button>
+        <p class="back-to-login">
+            Kembali ke
+            <a href="login.html">Masuk</a>
+        </p>
+    </div>
+    <div class="notification" id="notification">
+        Kata sandi berhasil diubah!
+    </div>
+</body>
+<script>
+    function showNotification() {
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+
+        // Sembunyikan notifikasi setelah 3 detik
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+</script>
 </html>

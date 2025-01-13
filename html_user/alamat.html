@@ -3,30 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERPUS.KU -ALAMAT</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="css/alamat.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="container">
-   <i class="fas fa-arrow-left back-button">
-   </i>
-   <h2>
-    Lengkapi Profil Anda
-   </h2>
-   <img alt="Profile picture of a person looking at a scenic view" class="profile-pic" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
-   <input class="input-field" placeholder="Provinsi, Kota, Kecamatan, Kode pos" type="text"/>
-   <input class="input-field" placeholder="Nama Jalan, Gedung, No. Rumah" type="text"/>
-   <input class="input-field" placeholder="Detail Lain (Cth: Blok / Uni No., Patokan)" type="text"/>
-   <div class="toggle-container">
-    <label for="toggle">
-     Atur sebagai Alamat Utama
-    </label>
-    <input id="toggle" type="checkbox"/>
-   </div>
-   <button class="submit-button">
-    Selanjutnya
-   </button>
-  </div>
- </body>
+    <title>PERPUS.KU - ALAMAT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="css/alamat.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <!-- Panah Kembali dengan href -->
+        <a href="PinjamBuku2.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <h2>Lengkapi Profil Anda</h2>
+        <img alt="Profile picture of a person looking at a scenic view" class="profile-pic" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
+        
+        <input class="input-field" placeholder="Provinsi, Kota, Kecamatan, Kode pos" type="text"/>
+        <input class="input-field" placeholder="Nama Jalan, Gedung, No. Rumah" type="text"/>
+        <input class="input-field" placeholder="Detail Lain (Cth: Blok / Uni No., Patokan)" type="text"/>
+        
+        <div class="toggle-container">
+            <label for="toggle">Atur sebagai Alamat Utama</label>
+            <input id="toggle" type="checkbox"/>
+        </div>
+        
+        <!-- Tombol dengan dua href -->
+        <a href="PinjamBuku2.html" class="submit-button" id="first-step">
+            Selanjutnya
+        </a>
+        <a href="KonfirmasiPeminjaman.html" class="submit-button" id="second-step" style="display: none;">
+            Selanjutnya
+        </a>
+    </div>
+
+    <script>
+        // Script untuk mengubah tampilan tombol
+        document.getElementById('toggle').addEventListener('change', function() {
+            const firstStep = document.getElementById('first-step');
+            const secondStep = document.getElementById('second-step');
+            if (this.checked) {
+                firstStep.style.display = 'none';
+                secondStep.style.display = 'inline-block';
+            } else {
+                firstStep.style.display = 'inline-block';
+                secondStep.style.display = 'none';
+            }
+        });
+    </script>
+</body>
 </html>
