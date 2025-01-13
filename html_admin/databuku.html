@@ -1,228 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-             <title>
-              PERPUS.KU
-             </title>
-             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-             <link href="css/databuku.css" rel="stylesheet"/>
-            </head>
-            <body>
-             <div class="header">
-              <div class="title">
-               PERPUS.KU
-              </div>
-              <div class="date">
-               Today : 30-11-2024
-              </div>
-              <button class="logout">
-               Logout
-              </button>
-             </div>
-             <div class="sidebar">
-                <img alt="User profile picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
-                <a href="indexadmin.html">
-                 <i class="fas fa-home">
-                 </i>
-                 Dashboard
-                </a>
-                <a href="dataanggota.html">
-                 <i class="fas fa-users">
-                 </i>
-                 Data Anggota
-                </a>
-                <a href="databuku.html">
-                 <i class="fas fa-book">
-                 </i>
-                 Data Buku
-                </a>
-                <a href="transaksi.html">
-                 <i class="fas fa-exchange-alt">
-                 </i>
-                 Transaksi
-                </a>
-               </div>
-               <div class="content">
-                <button class="button">
-                + Tambah Data
-                </button>
-              <div class="table-container">
-               <h2>
-                Data Buku
-               </h2>
-               <div>
-                <label for="records">
-                 records per page
-                </label>
-                <select id="records">
-                 <option value="10">
-                  10
-                 </option>
-                </select>
-                <label for="search">
-                 Search:
-                </label>
-                <input id="search" type="text"/>
-               </div>
-               <table>
-                <thead>
-                 <tr>
-                  <th>
-                   #
-                  </th>
-                  <th>
-                   Judul
-                  </th>
-                  <th>
-                   Pengarang
-                  </th>
-                  <th>
-                   Penerbit
-                  </th>
-                  <th>
-                   Tahun Terbit
-                  </th>
-                  <th>
-                   Jumlah Buku
-                  </th>
-                  <th>
-                   Gambar
-                  </th>
-                  <th>
-                   Aksi
-                  </th>
-                 </tr>
-                </thead>
-                <tbody>
-                 <tr>
-                  <td>
-                   1
-                  </td>
-                  <td>
-                   PHP Komplet Vol. 1
-                  </td>
-                  <td>
-                   Jubilee Edward Clark
-                  </td>
-                  <td>
-                   Alex Media Komputindo
-                  </td>
-                  <td>
-                   2018
-                  </td>
-                  <td>
-                   90
-                  </td>
-                  <td>
-                   <img alt="PHP Komplet Vol. 1 Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/hpR0mtbsKzK3MNVeE2IQIvpYugRVeSyKLeJiG1NeyfMDyO6dC.jpg" width="50"/>
-                  </td>
-                  <td class="actions">
-                   <button>
-                    Edit
-                   </button>
-                   <button class="delete">
-                    Hapus
-                   </button>
-                  </td>
-                 </tr>
-                 <tr>
-                  <td>
-                   2
-                  </td>
-                  <td>
-                   Pemrograman Bootstrap Untuk Pemula
-                  </td>
-                  <td>
-                   Jubilee Enterprise
-                  </td>
-                  <td>
-                   Alex Media Komputindo
-                  </td>
-                  <td>
-                   2016
-                  </td>
-                  <td>
-                   25
-                  </td>
-                  <td>
-                   <img alt="Pemrograman Bootstrap Untuk Pemula Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/gEF5UyeIIsW5BCJf0SmdZM3DLVfkhl3fZGlgcElaCVxexO6dC.jpg" width="50"/>
-                  </td>
-                  <td class="actions">
-                   <button>
-                    Edit
-                   </button>
-                   <button class="delete">
-                    Hapus
-                   </button>
-                  </td>
-                 </tr>
-                 <tr>
-                  <td>
-                   3
-                  </td>
-                  <td>
-                   Otodidak Pemrograman Python
-                  </td>
-                  <td>
-                   Jubilee Enterprise
-                  </td>
-                  <td>
-                   Alex Media Komputindo
-                  </td>
-                  <td>
-                   2017
-                  </td>
-                  <td>
-                   56
-                  </td>
-                  <td>
-                   <img alt="Otodidak Pemrograman Python Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/BrDmNUyOidrLIBHBpRaIbQv0sFIquVsVuqQRI5jfoJqI7o3JA.jpg" width="50"/>
-                  </td>
-                  <td class="actions">
-                   <button>
-                    Edit
-                   </button>
-                   <button class="delete">
-                    Hapus
-                   </button>
-                  </td>
-                 </tr>
-                 <tr>
-                  <td>
-                   4
-                  </td>
-                  <td>
-                   Aplikasi Menggunakan CodeIgniter
-                  </td>
-                  <td>
-                   Moch Kautsar Sophian
-                  </td>
-                  <td>
-                   Deepublish
-                  </td>
-                  <td>
-                   2016
-                  </td>
-                  <td>
-                   8
-                  </td>
-                  <td>
-                   <img alt="Aplikasi Menggunakan CodeIgniter Book Cover" height="75" src="https://storage.googleapis.com/a1aa/image/nMIXiAfM6BQRG66Jn2n8WjnEtgdDXC0CBlwY2rkAmDTK7o3JA.jpg" width="50"/>
-                  </td>
-                  <td class="actions">
-                   <button>
-                    Edit
-                   </button>
-                   <button class="delete">
-                    Hapus
-                   </button>
-                  </td>
-                 </tr>
-                </tbody>
-               </table>
-              </div>
-             </div>
-            </body>
-           </html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERPUS.KU</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="css/databuku.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="header">
+    <div class="title">PERPUS.KU</div>
+    <div class="date">Today : </div>
+    <button class="logout">Logout</button>
+  </div>
+  <div class="sidebar">
+    <img alt="User profile picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
+    <a href="indexadmin.html"><i class="fas fa-home"></i>Dashboard</a>
+    <a href="dataanggota.html"><i class="fas fa-users"></i>Data Anggota</a>
+    <a href="databuku.html"><i class="fas fa-book"></i>Data Buku</a>
+    <a href="transaksi.html"><i class="fas fa-exchange-alt"></i>Transaksi</a>
+  </div>
+  <div class="content">
+    <button class="button"><a href="tambahbuku.html">+ Tambah Data</a></button>
+    <div class="table-container">
+      <h2>Data Buku</h2>
+      <div>
+        <label for="records">records per page</label>
+        <select id="records">
+          <option value="10">10</option>
+        </select>
+        <label for="search">Search:</label>
+        <input id="search" type="text"/>
+      </div>
+      <table id="book-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Judul</th>
+            <th>Pengarang</th>
+            <th>Penerbit</th>
+            <th>Tahun Terbit</th>
+            <th>Jumlah Buku</th>
+            <th>Gambar</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data buku akan dimasukkan di sini melalui JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi untuk mendapatkan tanggal hari ini dengan format dd-mm-yyyy
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0'); // Menambahkan angka 0 jika hari < 10
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Menambahkan angka 0 jika bulan < 10
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
+
+  // Mengatur tanggal ke elemen dengan kelas 'date'
+  function setDate() {
+    const today = new Date();
+    const formattedDate = formatDate(today); // Format tanggal menjadi dd-mm-yyyy
+    document.querySelector('.date').textContent = `Today : ${formattedDate}`; // Menampilkan tanggal
+  }
+
+  // Panggil fungsi setDate saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', setDate);
+  // Fungsi untuk mengambil data buku dari API dan menampilkannya
+  async function loadBooks() {
+    try {
+      const response = await fetch('http://localhost:3000/books');
+      const books = await response.json();
+      const tableBody = document.querySelector('#book-table tbody');
+      tableBody.innerHTML = ''; // Clear existing table rows
+
+      books.forEach((book, index) => {
+      const row = document.createElement('tr');
+          
+          // Insert data into the row
+          row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${book.judul}</td>
+            <td>${book.pengarang}</td>
+            <td>${book.penerbit}</td>
+            <td>${book.tahun_terbit}</td>
+            <td>${book.jumlah_buku}</td>
+            <td><img src="${book.gambar}" alt="Cover Buku" height="75" width="50"></td>
+            <td class="actions">
+              <button class="edit"><a href="tambahbuku.html?judul=${encodeURIComponent(book.judul)}">Edit</a></button>
+              <button class="delete" data-judul="${book.judul}">Hapus</button>
+            </td>
+          `;
+          
+          tableBody.appendChild(row);
+        });
+        
+
+    // Tambahkan event listener untuk tombol hapus
+  document.querySelectorAll('.delete').forEach((button) => {
+  button.addEventListener('click', async (e) => {
+    const judul = e.target.closest('.delete').dataset.judul;
+    if (confirm(`Apakah Anda yakin ingin menghapus buku "${judul}"?`)) {
+      await deleteBook(judul);
+      loadBooks(); // Refresh data setelah penghapusan
+    }
+    });
+  });
+// Fungsi untuk menghapus buku
+async function deleteBook(judul) {
+    try {
+      const response = await fetch(`http://localhost:3000/deletebook/${encodeURIComponent(judul)}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        alert('Buku berhasil dihapus!');
+      } else {
+        alert('Gagal menghapus buku. Silakan coba lagi.');
+      }
+    } catch (error) {
+      console.error('Error deleting book:', error);
+      alert('Terjadi kesalahan saat menghapus buku.');
+    }
+  }
+      } catch (error) {
+        console.error('Error loading books:', error);
+      }
+    }
+
+    // Panggil fungsi untuk load books ketika halaman dimuat
+    document.addEventListener('DOMContentLoaded', loadBooks);
+  </script>
+</body>
+</html>

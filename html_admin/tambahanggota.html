@@ -1,102 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-   PERPUS.KU
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="css/tambahanggota.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="header">
-   <div class="title">
-    PERPUS.KU
-   </div>
-   <div class="date">
-    Today : 30-11-2024
-   </div>
-   <button class="logout">
-    Logout
-   </button>
-  </div>
-  <div class="sidebar">
-   <img alt="User profile picture" height="80" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="80"/>
-   <a href="indexadmin.html">
-    <i class="fas fa-tachometer-alt">
-    </i>
-    Dashboard
-   </a>
-   <a href="dataanggota.html">
-    <i class="fas fa-users">
-    </i>
-    Data Anggota
-   </a>
-   <a href="databuku.html">
-    <i class="fas fa-book">
-    </i>
-    Data Buku
-   </a>
-   <a href="transaksi.html">
-    <i class="fas fa-exchange-alt">
-    </i>
-    Transaksi
-   </a>
-  </div>
-  <div class="content">
-   <div class="form-container">
-    <h2>
-     Tambah Data Anggota
-    </h2>
-    <div class="form-group">
-     <label for="nim">
-      NIM
-     </label>
-     <input id="nim" placeholder="Input Nomor Induk Mahasiswa" type="text"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERPUS.KU</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="css/tambahanggota.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <div class="title">PERPUS.KU</div>
+        <div class="date">Today : <span id="today-date"></span></div>
+        <button class="logout">Logout</button>
     </div>
-    <div class="form-group">
-     <label for="nama">
-      Nama
-     </label>
-     <input id="nama" placeholder="Input Nama" type="text"/>
+    <div class="sidebar">
+        <img alt="User profile picture" height="80" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="80" />
+        <a href="indexadmin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="dataanggota.html"><i class="fas fa-users"></i> Data Anggota</a>
+        <a href="databuku.html"><i class="fas fa-book"></i> Data Buku</a>
+        <a href="transaksi.html"><i class="fas fa-exchange-alt"></i> Transaksi</a>
     </div>
-    <div class="form-group">
-     <label for="nama">
-      Program studi
-     </label>
-     <input id="program studi" placeholder="Input Program Studi" type="text"/>
+    <div class="content">
+        <div class="form-container">
+            <h2 id="form-title">Tambah Data Anggota</h2>
+            <form id="formAnggota" action="" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="NIM">NIM</label>
+                    <input id="NIM" name="NIM" placeholder="Input Nomor Induk Mahasiswa" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input id="nama" name="nama" placeholder="Input Nama" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label for="program_studi">Program Studi</label>
+                    <input id="program_studi" name="program_studi" placeholder="Input Program Studi" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                    <select id="jenis_kelamin" name="jenis_kelamin" required>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea id="alamat" name="alamat" placeholder="Alamat" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="foto">Gambar</label>
+                    <input id="foto" name="foto" type="file" />
+                </div>
+                <div id="foto-preview" style="margin: 10px 0;"></div>
+                <div class="form-actions">
+                    <button type="button" class="reset" onclick="resetForm()">Reset</button>
+                    <button type="submit" class="submit">Simpan</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-     <label for="jenis-kelamin">
-      Jenis Kelamin
-     </label>
-     <select id="jenis-kelamin">
-      <option>
-       Laki-laki
-      </option>
-      <option>
-       Perempuan
-      </option>
-     </select>
-    </div>
-    <div class="form-group">
-     <label for="alamat">
-      Alamat
-     </label>
-     <textarea id="alamat" placeholder="Alamat"></textarea>
-    </div>
-    <div class="form-group">
-     <label for="gambar">
-      Gambar
-     </label>
-     <input id="gambar" type="file"/>
-    </div>
-    <button type="button" onclick="window.location.href='dataanggota.html'">
-        Simpan
-      </button> 
-    </div>
-   </div>
-  </div>
- </body>
+
+    <script>
+        // Fungsi untuk mendapatkan data anggota berdasarkan NIM
+        async function fetchAnggotaByNIM(NIM) {
+            try {
+                const response = await fetch(`http://localhost:3000/dataanggota/${encodeURIComponent(NIM)}`);
+                if (!response.ok) {
+                    throw new Error("Gagal memuat data anggota.");
+                }
+
+                const anggota = await response.json();
+                if (anggota) {
+                    // Isi form dengan data anggota
+                    document.getElementById('NIM').value = anggota.NIM;
+                    document.getElementById('nama').value = anggota.nama;
+                    document.getElementById('program_studi').value = anggota.program_studi;
+                    document.getElementById('jenis_kelamin').value = anggota.jenis_kelamin;
+                    document.getElementById('alamat').value = anggota.alamat;
+
+                    // Menambahkan gambar profil jika ada
+                    if (anggota.foto) {
+                        const fotoElement = document.createElement('img');
+                        fotoElement.src = anggota.foto;
+                        fotoElement.alt = "Foto Profil";
+                        fotoElement.height = 75;
+                        fotoElement.width = 50;
+                        document.getElementById('foto-preview').appendChild(fotoElement);
+                    }
+
+                    // Ubah judul form
+                    document.getElementById('form-title').textContent = 'Edit Data Anggota';
+                } else {
+                    alert("Data anggota tidak ditemukan.");
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                alert("Terjadi kesalahan saat memuat data anggota.");
+            }
+        }
+
+        // Fungsi untuk menyimpan data ke server menggunakan fetch
+        // Fungsi untuk menyimpan data ke server menggunakan fetch
+        async function saveData(event) {
+    event.preventDefault(); // Mencegah form reload
+
+    const formData = new FormData(document.getElementById('formAnggota'));
+    const NIM = formData.get('NIM');
+    const isEditMode = new URLSearchParams(window.location.search).has('NIM');
+    const url = isEditMode
+        ? `http://localhost:3000/updateanggota/${encodeURIComponent(NIM)}`
+        : 'http://localhost:3000/addanggota';
+
+    try {
+        const response = await fetch(url, {
+            method: isEditMode ? 'PUT' : 'POST',
+            body: formData,
+        });
+
+        if (response.status === 200 || response.status === 201) { // Sukses
+            window.location.href = 'dataanggota.html'; // Redirect
+        } else {
+            console.error('Response error:', response);
+            alert('Gagal menyimpan data.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan saat menyimpan data.');
+    }
+}
+
+
+
+        // Fungsi untuk mereset form
+        function resetForm() {
+            document.getElementById('formAnggota').reset();
+            document.getElementById('foto-preview').innerHTML = ''; // Hapus preview gambar
+        }
+
+        // Tampilkan tanggal hari ini
+        document.getElementById('today-date').textContent = new Date().toLocaleDateString();
+
+        // Menambahkan event listener untuk menangani form submission
+        document.getElementById('formAnggota').addEventListener('submit', saveData);
+
+        // Menangani data anggota berdasarkan NIM di URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const NIM = urlParams.get('NIM');
+        if (NIM) {
+            fetchAnggotaByNIM(NIM); // Ambil data anggota berdasarkan NIM jika ada
+        }
+        // Fungsi untuk mengambil parameter dari URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Ambil NIM dari URL dan muat data anggota
+    async function loadAnggotaData() {
+        const NIM = getQueryParam('NIM');
+        if (NIM) {
+            try {
+                const response = await fetch(`http://localhost:3000/dataanggota/${encodeURIComponent(NIM)}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch anggota data');
+                }
+
+                const anggota = await response.json();
+                document.querySelector('#nim').value = anggota.NIM;
+                document.querySelector('#nama').value = anggota.nama;
+                document.querySelector('#jenis_kelamin').value = anggota.jenis_kelamin;
+                document.querySelector('#program_studi').value = anggota.program_studi;
+                document.querySelector('#alamat').value = anggota.alamat;
+                // Tambahkan logika untuk menampilkan foto jika ada
+            } catch (error) {
+                console.error('Error fetching anggota data:', error);
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadAnggotaData);
+    </script>
+</body>
 </html>

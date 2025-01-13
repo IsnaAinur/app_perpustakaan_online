@@ -1,219 +1,142 @@
+// FILE: dataanggota.html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-   PERPUS.KU
-  </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERPUS.KU</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="css/dataanggota.css" rel="stylesheet"/>
- </head>
- <body>
+</head>
+<body>
   <div class="header">
-   <div class="title">
-    PERPUS.KU
-   </div>
-   <div class="date">
-    Today : 30-11-2024
-   </div>
-   <button class="logout">
-    Logout
-   </button>
+    <div class="title">PERPUS.KU</div>
+    <div class="date">Today : <span id="today-date"></span></div>
+    <button class="logout">Logout</button>
   </div>
   <div class="sidebar">
     <img alt="User profile picture" height="100" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100"/>
-    <a href="indexadmin.html">
-     <i class="fas fa-home">
-     </i>
-     Dashboard
-    </a>
-    <a href="dataanggota.html">
-     <i class="fas fa-users">
-     </i>
-     Data Anggota
-    </a>
-    <a href="databuku.html">
-     <i class="fas fa-book">
-     </i>
-     Data Buku
-    </a>
-    <a href="transaksi.html">
-     <i class="fas fa-exchange-alt">
-     </i>
-     Transaksi
-    </a>
-   </div>
-<div class="content">
-  <a href="tambahanggota.html">
-    <i class="fas fa-plus">
-    </i>
-    Tambah Data
-   </a>
-   <div class="table-container">
-    <h3>
-     Tabel Anggota
-    </h3>
-    <div>
-     <label for="recordsPerPage">
-      records per page
-     </label>
-     <select id="recordsPerPage">
-      <option value="10">
-       10
-      </option>
-      <option value="25">
-       25
-      </option>
-      <option value="50">
-       50
-      </option>
-      <option value="100">
-       100
-      </option>
-     </select>
-     <input placeholder="Search" type="text"/>
-    </div>
-    <table>
-     <thead>
-      <tr>
-       <th>
-        No
-       </th>
-       <th>
-        NIM
-       </th>
-       <th>
-        Nama
-       </th>
-       <th>
-        Jenis Kelamin
-       </th>
-       <th>
-        Program Studi
-       </th>
-       <th>
-        Alamat
-       </th>
-       <th>
-        Foto
-       </th>
-       <th>
-        Aksi
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        230119012
-       </td>
-       <td>
-        Isna Ainur Rohmah
-       </td>
-       <td>
-        Perempuan
-       </td>
-       <td>
-        Teknologi Rekayasa Perangkat Lunak
-       </td>
-       <td>
-        Boyolali
-       </td>
-       <td>
-        <img alt="Profile picture of Siti Hartati" height="50" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="50"/>
-       </td>
-       <td>
-        <button class="btn details">
-         Details
-        </button>
-        <button class="btn edit">
-         Edit
-        </button>
-        <button class="btn delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        230119010
-       </td>
-       <td>
-        Fauzan Teza Saputra
-       </td>
-       <td>
-        Laki-laki
-       </td>
-       <td>
-        Teknologi Rekayasa Perangkat Lunak
-       </td>
-       </td>
-       <td>
-        Sukoharjo
-       </td>
-       <td>
-        <img alt="Profile picture of Lee Eunsang" height="50" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="50"/>
-       </td>
-       <td>
-        <button class="btn details">
-         Details
-        </button>
-        <button class="btn edit">
-         Edit
-        </button>
-        <button class="btn delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        230119002
-       </td>
-       <td>
-        Aditya Putra Ariska Pratama
-       </td>
-       <td>
-        Laki-laki
-       </td>
-       <td>
-        Teknologi Rekayasa Perangkat Lunak
-       </td>
-       <td>
-        Boyolali
-       </td>
-       <td>
-        <img alt="Profile picture of Lee Hangyul" height="50" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="50"/>
-       </td>
-       <td>
-        <button class="btn details">
-         Details
-        </button>
-        <button class="btn edit">
-         Edit
-        </button>
-        <button class="btn delete">
-         Hapus
-        </button>
-       </td>
-      </tr>
-      <tr>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-   </div>
+    <a href="indexadmin.html"><i class="fas fa-home"></i>Dashboard</a>
+    <a href="dataanggota.html"><i class="fas fa-users"></i>Data Anggota</a>
+    <a href="databuku.html"><i class="fas fa-book"></i>Data Buku</a>
+    <a href="transaksi.html"><i class="fas fa-exchange-alt"></i>Transaksi</a>
   </div>
- </body>
+  <div class="content">
+    <button class="button"><a href="tambahanggota.html">+ Tambah Anggota</a></button>
+    <div class="table-container">
+      <h2>Daftar Anggota </h2>
+      <div>
+        <label for="records">records per page</label>
+        <select id="records">
+          <option value="10">10</option>
+        </select>
+        <label for="search">Search:</label>
+        <input id="search" type="text"/>
+      </div>
+      <table id="anggota-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Program Studi</th>
+            <th>Alamat</th>
+            <th>Foto</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data anggota akan dimasukkan di sini melalui JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function formatDate(date) {
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const year = date.getFullYear();
+      return `${day}-${month}-${year}`;
+    }
+
+    function setDate() {
+      const today = new Date();
+      const formattedDate = formatDate(today);
+      document.querySelector('.date').textContent = `Today : ${formattedDate}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', setDate);
+
+    async function fetchAnggota() {
+      try {
+        const response = await fetch('http://localhost:3000/dataanggota');
+        if (!response.ok) {
+          throw new Error('Failed to fetch anggota data');
+        }
+
+        const anggotaData = await response.json();
+        const tableBody = document.querySelector('#anggota-table tbody');
+        tableBody.innerHTML = '';
+
+        anggotaData.forEach((anggota, index) => {
+          const foto = anggota.foto 
+            ? `http://localhost:3000/${anggota.foto}`
+            : 'https://via.placeholder.com/75x50';
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${anggota.NIM}</td>
+            <td>${anggota.nama}</td>
+            <td>${anggota.jenis_kelamin}</td>
+            <td>${anggota.program_studi}</td>
+            <td>${anggota.alamat}</td>
+            <td><img src="${foto}" alt="Foto Profil" height="75" width="50"></td>
+            <td class="actions">
+              <button class="edit">
+                  <a href="tambahanggota.html?NIM=${encodeURIComponent(anggota.NIM)}">Edit</a>
+              </button>
+              <button class="delete" data-anggota="${anggota.NIM}">Hapus</button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+
+        const deleteButtons = document.querySelectorAll('.delete');
+        deleteButtons.forEach(button => {
+          button.addEventListener('click', async (event) => {
+            const NIM = event.target.getAttribute('data-anggota');
+            await deleteAnggota(NIM);
+          });
+        });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        alert('Gagal memuat data anggota.');
+      }
+    }
+
+    async function deleteAnggota(NIM) {
+      try {
+        const response = await fetch(`http://localhost:3000/deleteanggota/${encodeURIComponent(NIM)}`, {
+          method: 'DELETE',
+        });
+
+        if (response.ok) {
+          alert('Anggota berhasil dihapus.');
+          fetchAnggota();
+        } else {
+          alert('Gagal menghapus anggota.');
+        }
+      } catch (error) {
+        console.error('Error deleting anggota:', error);
+        alert('Terjadi kesalahan saat menghapus anggota.');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchAnggota);
+  </script>
+
+</body>
 </html>
